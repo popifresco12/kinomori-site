@@ -1,24 +1,18 @@
 import { Link } from "react-router-dom";
 import { workshops } from "../data";
 import { SiteLayout } from "./SiteLayout";
+import { useI18n } from "../i18n/I18nContext";
 
 /* ------------------------------------------------------------------ */
 /*  /workshops — listado de talleres                                   */
 /* ------------------------------------------------------------------ */
 
-const LEVEL_LABEL: Record<string, string> = {
-  iniciación: "Iniciación",
-  intermedio: "Intermedio",
-  avanzado: "Avanzado",
-};
-
 export function WorkshopsPage() {
+  const { t } = useI18n();
+
   return (
-    <SiteLayout title="Workshops" kicker="Aprende con las manos">
-      <p className="page-intro">
-        Talleres en el local de Tamraght: wok, masa, té y fuego. Plazas
-        limitadas — reserva escribiéndonos.
-      </p>
+    <SiteLayout title={t("nav.workshops")} kicker={t("ui.workshopsKicker")}>
+      <p className="page-intro">{t("ui.workshopsIntro")}</p>
 
       <div className="card-grid">
         {workshops.map((workshop) => (
@@ -28,19 +22,19 @@ export function WorkshopsPage() {
             className="card"
           >
             <div className="card-media">
-              <img src={workshop.image} alt={workshop.name} loading="lazy" />
+              <img src={workshop.image} alt={t(workshop.name)} loading="lazy" />
               <span className="card-cat">
-                {LEVEL_LABEL[workshop.level]} · {workshop.duration}
+                {t(`ui.levels.${workshop.level}`)} · {workshop.duration}
               </span>
             </div>
             <div className="card-body">
-              <h2 className="card-name">{workshop.name}</h2>
-              <p className="card-short">{workshop.short}</p>
+              <h2 className="card-name">{t(workshop.name)}</h2>
+              <p className="card-short">{t(workshop.short)}</p>
               <div className="card-foot">
                 <span className="card-price">
                   {workshop.price} {workshop.currency}
                 </span>
-                <span className="card-cta">Más info →</span>
+                <span className="card-cta">{t("ui.moreInfo")}</span>
               </div>
             </div>
           </Link>

@@ -1,28 +1,24 @@
 import { Link, useParams } from "react-router-dom";
 import { workshops } from "../data";
 import { SiteLayout } from "./SiteLayout";
+import { useI18n } from "../i18n/I18nContext";
 
 /* ------------------------------------------------------------------ */
 /*  /workshops/:slug — ficha individual de un taller                   */
 /* ------------------------------------------------------------------ */
 
-const LEVEL_LABEL: Record<string, string> = {
-  iniciación: "Iniciación",
-  intermedio: "Intermedio",
-  avanzado: "Avanzado",
-};
-
 export function WorkshopDetallePage() {
   const { slug } = useParams();
+  const { t } = useI18n();
   const workshop = workshops.find((w) => w.slug === slug);
 
   if (!workshop) {
     return (
-      <SiteLayout title="Workshop no encontrado">
+      <SiteLayout title={t("ui.workshopNotFoundTitle")}>
         <p className="page-intro">
-          No hemos encontrado ese taller.{" "}
+          {t("ui.workshopNotFoundBody")}{" "}
           <Link to="/workshops" className="page-link">
-            Ver todos los workshops →
+            {t("ui.seeAllWorkshops")}
           </Link>
         </p>
       </SiteLayout>
@@ -33,50 +29,50 @@ export function WorkshopDetallePage() {
 
   return (
     <SiteLayout
-      title={workshop.name}
-      kicker={`${LEVEL_LABEL[workshop.level]} · ${workshop.duration} · ${workshop.price} ${workshop.currency}`}
+      title={t(workshop.name)}
+      kicker={`${t(`ui.levels.${workshop.level}`)} · ${workshop.duration} · ${workshop.price} ${workshop.currency}`}
     >
       <article className="detail">
         <div className="detail-media">
-          <img src={workshop.image} alt={workshop.name} />
+          <img src={workshop.image} alt={t(workshop.name)} />
         </div>
 
         <div className="detail-content">
-          <p className="detail-short">{workshop.short}</p>
+          <p className="detail-short">{t(workshop.short)}</p>
 
           {workshop.description.map((paragraph) => (
-            <p key={paragraph.slice(0, 24)} className="detail-text">
-              {paragraph}
+            <p key={paragraph} className="detail-text">
+              {t(paragraph)}
             </p>
           ))}
 
           {workshop.upcoming && (
             <div className="detail-price">
-              <span className="detail-price-amount">{workshop.upcoming}</span>
+              <span className="detail-price-amount">{t(workshop.upcoming)}</span>
               <span className="detail-price-note">
-                {workshop.price} {workshop.currency} por persona
+                {workshop.price} {workshop.currency} {t("ui.perPerson")}
               </span>
             </div>
           )}
 
-          <h3 className="detail-includes-title">Qué incluye</h3>
+          <h3 className="detail-includes-title">{t("ui.whatIncludes")}</h3>
           <ul className="detail-includes">
             {workshop.includes.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item}>{t(item)}</li>
             ))}
           </ul>
 
           <p className="detail-book">
-            ¿Te apuntas?{" "}
+            {t("ui.joinUs")}{" "}
             <a className="page-link" href="mailto:hola@kinomori.example">
-              Escríbenos →
+              {t("ui.writeUs")}
             </a>
           </p>
         </div>
       </article>
 
       <section className="detail-others">
-        <h2 className="detail-others-title">Otros workshops</h2>
+        <h2 className="detail-others-title">{t("ui.otherWorkshops")}</h2>
         <div className="card-grid card-grid--mini">
           {otros.map((other) => (
             <Link
@@ -85,10 +81,10 @@ export function WorkshopDetallePage() {
               className="card"
             >
               <div className="card-media">
-                <img src={other.image} alt={other.name} loading="lazy" />
+                <img src={other.image} alt={t(other.name)} loading="lazy" />
               </div>
               <div className="card-body">
-                <h3 className="card-name">{other.name}</h3>
+                <h3 className="card-name">{t(other.name)}</h3>
                 <div className="card-foot">
                   <span className="card-price">
                     {other.price} {other.currency}

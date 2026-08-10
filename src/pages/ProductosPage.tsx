@@ -1,29 +1,22 @@
 import { Link } from "react-router-dom";
 import { products } from "../data";
 import { SiteLayout } from "./SiteLayout";
+import { useI18n } from "../i18n/I18nContext";
 
 /* ------------------------------------------------------------------ */
 /*  /productos — tienda: objetos, complementos y ropa                  */
 /*  (los platos van en /menu, los tés y matchas en /te)                */
 /* ------------------------------------------------------------------ */
 
-const CATEGORY_LABEL: Record<string, string> = {
-  complementos: "Complementos",
-  objetos: "Objetos",
-  ropa: "Ropa",
-};
-
 const SHOP_CATEGORIES = ["complementos", "objetos", "ropa"];
 
 export function ProductosPage() {
+  const { t } = useI18n();
   const shop = products.filter((p) => SHOP_CATEGORIES.includes(p.category));
 
   return (
-    <SiteLayout title="Tienda" kicker="Objetos · Hechos para durar">
-      <p className="page-intro">
-        Objetos que guardan tiempo: artesanía, ropa y teteras hechas a mano.
-        Precio y detalles en cada página — el carrito llegará más adelante.
-      </p>
+    <SiteLayout title={t("nav.shop")} kicker={t("ui.shopKicker") || "Objetos · Hechos para durar"}>
+      <p className="page-intro">{t("ui.shopIntro")}</p>
 
       <div className="card-grid">
         {shop.map((product) => (
@@ -33,19 +26,17 @@ export function ProductosPage() {
             className="card"
           >
             <div className="card-media">
-              <img src={product.image} alt={product.name} loading="lazy" />
-              <span className="card-cat">
-                {CATEGORY_LABEL[product.category]}
-              </span>
+              <img src={product.image} alt={t(product.name)} loading="lazy" />
+              <span className="card-cat">{t(`ui.categories.${product.category}`)}</span>
             </div>
             <div className="card-body">
-              <h2 className="card-name">{product.name}</h2>
-              <p className="card-short">{product.short}</p>
+              <h2 className="card-name">{t(product.name)}</h2>
+              <p className="card-short">{t(product.short)}</p>
               <div className="card-foot">
                 <span className="card-price">
                   {product.price} {product.currency}
                 </span>
-                <span className="card-cta">Ver más →</span>
+                <span className="card-cta">{t("ui.seeMore")}</span>
               </div>
             </div>
           </Link>

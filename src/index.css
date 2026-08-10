@@ -4,3 +4,44 @@ body {
   margin: 0;
   background: #14100c;
 }
+
+/* Language switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.lang-btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(20, 16, 12, 0.45);
+  color: rgba(255, 255, 255, 0.72);
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 5px 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  line-height: 1;
+}
+.lang-btn:hover {
+  border-color: rgba(255, 122, 61, 0.6);
+  color: #fff;
+}
+.lang-btn.is-active {
+  background: linear-gradient(135deg, var(--accent-a, #ff7a3d), var(--accent-b, #b14aed));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 14px rgba(255, 122, 61, 0.35);
+}
+@media (max-width: 760px) {
+  .lang-switcher {
+    gap: 2px;
+  }
+  .lang-btn {
+    padding: 4px 6px;
+    font-size: 0.62rem;
+  }
+}

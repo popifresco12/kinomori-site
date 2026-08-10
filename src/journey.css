@@ -428,6 +428,10 @@ a {
     display: none;
   }
 
+  .journey-meta span:last-child {
+    display: none;
+  }
+
   .journey-meta {
     gap: 0;
   }

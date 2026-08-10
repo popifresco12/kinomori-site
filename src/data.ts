@@ -1,15 +1,20 @@
 /* ------------------------------------------------------------------ */
-/*  Datos de prueba — Kinomori (sustituir por contenido real)          */
+/*  Datos de Kinomori — los campos de texto son CLAVES i18n            */
+/*  (resueltas por useI18n().t()). Los datos estructurales se quedan.  */
 /* ------------------------------------------------------------------ */
 
 export interface Product {
   slug: string;
+  /** Clave i18n → products.<slug>.name */
   name: string;
   category: "cocina" | "te" | "complementos" | "ropa" | "objetos";
   price: number;
   currency: string;
+  /** Clave i18n → products.<slug>.short */
   short: string;
+  /** Claves i18n → products.<slug>.description.N */
   description: string[];
+  /** Claves i18n → products.<slug>.details.N.{label,value} */
   details: { label: string; value: string }[];
   image: string;
   featured?: boolean;
@@ -17,168 +22,173 @@ export interface Product {
 
 export interface Workshop {
   slug: string;
+  /** Clave i18n → workshops.<slug>.name */
   name: string;
   level: "iniciación" | "intermedio" | "avanzado";
   duration: string;
   price: number;
   currency: string;
+  /** Clave i18n → workshops.<slug>.short */
   short: string;
+  /** Claves i18n → workshops.<slug>.description.N */
   description: string[];
+  /** Claves i18n → workshops.<slug>.includes.N */
   includes: string[];
   image: string;
+  /** Clave i18n → workshops.<slug>.upcoming */
   upcoming?: string;
 }
 
 export const products: Product[] = [
   {
     slug: "nasi-goreng-kit",
-    name: "Nasi Goreng · Kit para casa",
+    name: "products.nasi-goreng-kit.name",
     category: "cocina",
     price: 14,
     currency: "€",
-    short: "El arroz frito que servimos en el local, con su pasta de sambal y las especias exactas.",
+    short: "products.nasi-goreng-kit.short",
     description: [
-      "Nuestro nasi goreng en formato kit: todos los ingredientes secos y la pasta de sambal que usamos en el wok, con la receta paso a paso de la casa.",
-      "Alcanza para 2-3 raciones generosas. Solo necesitas arroz del día anterior, huevos y lo que tengas en la nevera.",
+      "products.nasi-goreng-kit.description.0",
+      "products.nasi-goreng-kit.description.1",
     ],
     details: [
-      { label: "Raciones", value: "2-3 personas" },
-      { label: "Dificultad", value: "Fácil" },
-      { label: "Tiempo", value: "25 min" },
-      { label: "Alérgenos", value: "Soja, sésamo, huevo" },
+      { label: "products.nasi-goreng-kit.details.0.label", value: "products.nasi-goreng-kit.details.0.value" },
+      { label: "products.nasi-goreng-kit.details.1.label", value: "products.nasi-goreng-kit.details.1.value" },
+      { label: "products.nasi-goreng-kit.details.2.label", value: "products.nasi-goreng-kit.details.2.value" },
+      { label: "products.nasi-goreng-kit.details.3.label", value: "products.nasi-goreng-kit.details.3.value" },
     ],
     image: "media/product-nasi-goreng-kit.webp",
     featured: true,
   },
   {
     slug: "dan-dan-noodles",
-    name: "Dan Dan Noodles",
+    name: "products.dan-dan-noodles.name",
     category: "cocina",
     price: 12,
     currency: "€",
-    short: "Los noodles picantes de Sichuan, con su salsa de cacahuete y chile.",
+    short: "products.dan-dan-noodles.short",
     description: [
-      "La receta de nuestros dan dan noodles: fideos frescos, salsa de sésamo y cacahuete, chile de Sichuan y el topping de cerdo picado.",
-      "Incluye los fideos, la mezcla de especias y la guía de montaje. Para 2 personas.",
+      "products.dan-dan-noodles.description.0",
+      "products.dan-dan-noodles.description.1",
     ],
     details: [
-      { label: "Raciones", value: "2 personas" },
-      { label: "Dificultad", value: "Media" },
-      { label: "Tiempo", value: "30 min" },
-      { label: "Alérgenos", value: "Soja, sésamo, cacahuete, gluten" },
+      { label: "products.dan-dan-noodles.details.0.label", value: "products.dan-dan-noodles.details.0.value" },
+      { label: "products.dan-dan-noodles.details.1.label", value: "products.dan-dan-noodles.details.1.value" },
+      { label: "products.dan-dan-noodles.details.2.label", value: "products.dan-dan-noodles.details.2.value" },
+      { label: "products.dan-dan-noodles.details.3.label", value: "products.dan-dan-noodles.details.3.value" },
     ],
     image: "media/product-dan-dan-noodles.webp",
     featured: true,
   },
   {
     slug: "miso-negro-salmón",
-    name: "Miso Negro · Salmón",
+    name: "products.miso-negro-salmón.name",
     category: "cocina",
     price: 18,
     currency: "€",
-    short: "La salsa de miso negro para glasear salmón o verduras al horno.",
+    short: "products.miso-negro-salmón.short",
     description: [
-      "El miso negro que usamos para glasear el salmón: fermentado largo, dulce y profundo.",
-      "Un tarro de 250g que rinde para 4-6 glaseados. Se conserva meses en la nevera.",
+      "products.miso-negro-salmón.description.0",
+      "products.miso-negro-salmón.description.1",
     ],
     details: [
-      { label: "Contenido", value: "250 g" },
-      { label: "Dificultad", value: "Fácil" },
-      { label: "Tiempo", value: "20 min" },
-      { label: "Alérgenos", value: "Soja" },
+      { label: "products.miso-negro-salmón.details.0.label", value: "products.miso-negro-salmón.details.0.value" },
+      { label: "products.miso-negro-salmón.details.1.label", value: "products.miso-negro-salmón.details.1.value" },
+      { label: "products.miso-negro-salmón.details.2.label", value: "products.miso-negro-salmón.details.2.value" },
+      { label: "products.miso-negro-salmón.details.3.label", value: "products.miso-negro-salmón.details.3.value" },
     ],
     image: "media/product-miso-negro.webp",
   },
   {
     slug: "matcha-ceremonial",
-    name: "Matcha Ceremonial",
+    name: "products.matcha-ceremonial.name",
     category: "te",
     price: 22,
     currency: "€",
-    short: "Matcha de cosecha temprana, molido en piedra, para usucha y koicha.",
+    short: "products.matcha-ceremonial.short",
     description: [
-      "Matcha ceremonial de la primera cosecha: verde brillante, dulce, sin amargor.",
-      "Viene en lata de 40g con las instrucciones de batido (usucha y koicha) y el toque de Kinomori.",
+      "products.matcha-ceremonial.description.0",
+      "products.matcha-ceremonial.description.1",
     ],
     details: [
-      { label: "Contenido", value: "40 g" },
-      { label: "Origen", value: "Uji, Japón" },
-      { label: "Cosecha", value: "Primera (ichibancha)" },
-      { label: "Formato", value: "Usucha / Koicha" },
+      { label: "products.matcha-ceremonial.details.0.label", value: "products.matcha-ceremonial.details.0.value" },
+      { label: "products.matcha-ceremonial.details.1.label", value: "products.matcha-ceremonial.details.1.value" },
+      { label: "products.matcha-ceremonial.details.2.label", value: "products.matcha-ceremonial.details.2.value" },
+      { label: "products.matcha-ceremonial.details.3.label", value: "products.matcha-ceremonial.details.3.value" },
     ],
     image: "media/product-matcha-ceremonial.webp",
     featured: true,
   },
   {
     slug: "te-oolong-tieguanyin",
-    name: "Té Oolong · Tieguanyin",
+    name: "products.te-oolong-tieguanyin.name",
     category: "te",
     price: 16,
     currency: "€",
-    short: "Oolong floral de Anxi, con ese aroma a orquídea que engancha.",
+    short: "products.te-oolong-tieguanyin.short",
     description: [
-      "Tieguanyin de Anxi, tostado suave: floral, mantecoso, con un retrogusto dulce.",
-      "Bolsa de 100g. Se puede re-infusionar 5-6 veces.",
+      "products.te-oolong-tieguanyin.description.0",
+      "products.te-oolong-tieguanyin.description.1",
     ],
     details: [
-      { label: "Contenido", value: "100 g" },
-      { label: "Origen", value: "Anxi, China" },
-      { label: "Infusiones", value: "5-6" },
-      { label: "Tostado", value: "Suave" },
+      { label: "products.te-oolong-tieguanyin.details.0.label", value: "products.te-oolong-tieguanyin.details.0.value" },
+      { label: "products.te-oolong-tieguanyin.details.1.label", value: "products.te-oolong-tieguanyin.details.1.value" },
+      { label: "products.te-oolong-tieguanyin.details.2.label", value: "products.te-oolong-tieguanyin.details.2.value" },
+      { label: "products.te-oolong-tieguanyin.details.3.label", value: "products.te-oolong-tieguanyin.details.3.value" },
     ],
     image: "media/product-te-oolong.webp",
   },
   {
     slug: "pulsera-zen",
-    name: "Pulsera Zen · Piedra y soga",
+    name: "products.pulsera-zen.name",
     category: "complementos",
     price: 9,
     currency: "€",
-    short: "Hecha a mano con piedra natural y nudo artesanal. Ninguna igual.",
+    short: "products.pulsera-zen.short",
     description: [
-      "Cada pulsera se hace a mano en el local: piedra natural, soga de algodón y nudo japonés.",
-      "Tallas S/M/L. Si la quieres a medida, escríbenos.",
+      "products.pulsera-zen.description.0",
+      "products.pulsera-zen.description.1",
     ],
     details: [
-      { label: "Material", value: "Piedra natural + algodón" },
-      { label: "Tallas", value: "S / M / L" },
-      { label: "Hecho a mano", value: "Sí, en Tamraght" },
+      { label: "products.pulsera-zen.details.0.label", value: "products.pulsera-zen.details.0.value" },
+      { label: "products.pulsera-zen.details.1.label", value: "products.pulsera-zen.details.1.value" },
+      { label: "products.pulsera-zen.details.2.label", value: "products.pulsera-zen.details.2.value" },
     ],
     image: "media/product-pulsera-zen.webp",
   },
   {
     slug: "camiseta-kinomori",
-    name: "Camiseta Kinomori",
+    name: "products.camiseta-kinomori.name",
     category: "ropa",
     price: 20,
     currency: "€",
-    short: "Algodón orgánico, el kanji de Kinomori en el pecho.",
+    short: "products.camiseta-kinomori.short",
     description: [
-      "Camiseta de algodón orgánico 180g, corte regular, kanji bordado.",
-      "Disponible en negro, arena y verde bosque. Tallas XS-XXL.",
+      "products.camiseta-kinomori.description.0",
+      "products.camiseta-kinomori.description.1",
     ],
     details: [
-      { label: "Material", value: "Algodón orgánico 180 g" },
-      { label: "Colores", value: "Negro / Arena / Verde" },
-      { label: "Tallas", value: "XS – XXL" },
+      { label: "products.camiseta-kinomori.details.0.label", value: "products.camiseta-kinomori.details.0.value" },
+      { label: "products.camiseta-kinomori.details.1.label", value: "products.camiseta-kinomori.details.1.value" },
+      { label: "products.camiseta-kinomori.details.2.label", value: "products.camiseta-kinomori.details.2.value" },
     ],
     image: "media/product-camiseta-kinomori.webp",
   },
   {
     slug: "tetera-hierro",
-    name: "Tetera de hierro · Tetsubin",
+    name: "products.tetera-hierro.name",
     category: "objetos",
     price: 48,
     currency: "€",
-    short: "Tetsubin de 0.8L: el agua sabe mejor, el té también.",
+    short: "products.tetera-hierro.short",
     description: [
-      "Tetera de hierro fundido con interior esmaltado, 0.8L. Mantiene el calor y redondea el agua.",
-      "Incluye cesto de infusión de acero inoxidable.",
+      "products.tetera-hierro.description.0",
+      "products.tetera-hierro.description.1",
     ],
     details: [
-      { label: "Capacidad", value: "0.8 L" },
-      { label: "Material", value: "Hierro fundido" },
-      { label: "Interior", value: "Esmaltado" },
+      { label: "products.tetera-hierro.details.0.label", value: "products.tetera-hierro.details.0.value" },
+      { label: "products.tetera-hierro.details.1.label", value: "products.tetera-hierro.details.1.value" },
+      { label: "products.tetera-hierro.details.2.label", value: "products.tetera-hierro.details.2.value" },
     ],
     image: "media/product-tetera-hierro.webp",
   },
@@ -187,87 +197,87 @@ export const products: Product[] = [
 export const workshops: Workshop[] = [
   {
     slug: "wok-desde-cero",
-    name: "El Wok desde Cero",
+    name: "workshops.wok-desde-cero.name",
     level: "iniciación",
     duration: "3 horas",
     price: 45,
     currency: "€",
-    short: "Aprende el wok como lo hacemos en el local: fuego alto, ingredientes en orden, sin miedo.",
+    short: "workshops.wok-desde-cero.short",
     description: [
-      "Un taller práctico donde montamos el wok, preparamos el arroz del día anterior y cocinamos tres platos clásicos: nasi goreng, verduras salteadas y noodles.",
-      "Te llevas la técnica (no solo la receta): el orden de los ingredientes, el control del fuego y cómo saber cuándo está listo.",
-      "Máximo 6 personas. Incluye todos los ingredientes y una copa de té.",
+      "workshops.wok-desde-cero.description.0",
+      "workshops.wok-desde-cero.description.1",
+      "workshops.wok-desde-cero.description.2",
     ],
     includes: [
-      "3 platos cocinados por ti",
-      "Guía impresa con las recetas",
-      "Ingredientes y wok incluidos",
-      "Cata de té de la casa",
+      "workshops.wok-desde-cero.includes.0",
+      "workshops.wok-desde-cero.includes.1",
+      "workshops.wok-desde-cero.includes.2",
+      "workshops.wok-desde-cero.includes.3",
     ],
     image: "media/workshop-wok-desde-cero.webp",
-    upcoming: "Próxima fecha por confirmar",
+    upcoming: "workshops.wok-desde-cero.upcoming",
   },
   {
     slug: "ceremonia-te",
-    name: "Ceremonia del Té",
+    name: "workshops.ceremonia-te.name",
     level: "iniciación",
     duration: "2 horas",
     price: 35,
     currency: "€",
-    short: "Una tarde de matcha, atención y silencio. De la mano de nuestro té.",
+    short: "workshops.ceremonia-te.short",
     description: [
-      "Una introducción a la ceremonia del té japonesa: el batido del matcha (usucha), la postura, la respiración y el orden de la sala.",
-      "No hace falta experiencia. Solo venir con curiosidad y ropa cómoda.",
+      "workshops.ceremonia-te.description.0",
+      "workshops.ceremonia-te.description.1",
     ],
     includes: [
-      "Matcha ceremonial incluido",
-      "Cuenco y batidor para practicar",
-      "Historia y ritos explicados",
-      "Té para llevar",
+      "workshops.ceremonia-te.includes.0",
+      "workshops.ceremonia-te.includes.1",
+      "workshops.ceremonia-te.includes.2",
+      "workshops.ceremonia-te.includes.3",
     ],
     image: "media/workshop-ceremonia-te.webp",
-    upcoming: "Sábados, 17:00",
+    upcoming: "workshops.ceremonia-te.upcoming",
   },
   {
     slug: "dumplings-a-mano",
-    name: "Dumplings a Mano",
+    name: "workshops.dumplings-a-mano.name",
     level: "intermedio",
     duration: "3.5 horas",
     price: 55,
     currency: "€",
-    short: "Masa, doblez y vapor: los dumplings de Kinomori, hechos por ti.",
+    short: "workshops.dumplings-a-mano.short",
     description: [
-      "Hacemos la masa desde cero, dos rellenos (cerdo y verduras) y aprendemos los dobleces clásicos. Al final, los cocinamos al vapor y al sartén.",
-      "Te llevas la masa y los dumplings que sobren.",
+      "workshops.dumplings-a-mano.description.0",
+      "workshops.dumplings-a-mano.description.1",
     ],
     includes: [
-      "Masa y rellenos incluidos",
-      "Técnicas de doblez",
-      "Cocción al vapor y a la plancha",
-      "Recetas para repetir en casa",
+      "workshops.dumplings-a-mano.includes.0",
+      "workshops.dumplings-a-mano.includes.1",
+      "workshops.dumplings-a-mano.includes.2",
+      "workshops.dumplings-a-mano.includes.3",
     ],
     image: "media/workshop-dumplings-a-mano.webp",
-    upcoming: "Próxima fecha por confirmar",
+    upcoming: "workshops.dumplings-a-mano.upcoming",
   },
   {
     slug: "ramen-casero",
-    name: "Ramen Casero",
+    name: "workshops.ramen-casero.name",
     level: "avanzado",
     duration: "5 horas",
     price: 75,
     currency: "€",
-    short: "Caldo de 12 horas, chashu, ajitama y noodles: el ramen completo.",
+    short: "workshops.ramen-casero.short",
     description: [
-      "El taller más completo: caldo tori paitan, chashu de cerdo, huevo marinado y noodles frescos hechos a mano.",
-      "Comemos el ramen juntos al final. Lleva tu mejor hambre.",
+      "workshops.ramen-casero.description.0",
+      "workshops.ramen-casero.description.1",
     ],
     includes: [
-      "Caldo desde cero (12 h)",
-      "Chashu y ajitama",
-      "Noodles frescos a mano",
-      "Comida final incluida",
+      "workshops.ramen-casero.includes.0",
+      "workshops.ramen-casero.includes.1",
+      "workshops.ramen-casero.includes.2",
+      "workshops.ramen-casero.includes.3",
     ],
     image: "media/workshop-ramen-casero.webp",
-    upcoming: "Próxima fecha por confirmar",
+    upcoming: "workshops.ramen-casero.upcoming",
   },
 ];

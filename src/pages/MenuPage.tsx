@@ -1,20 +1,19 @@
 import { Link } from "react-router-dom";
 import { products } from "../data";
 import { SiteLayout } from "./SiteLayout";
+import { useI18n } from "../i18n/I18nContext";
 
 /* ------------------------------------------------------------------ */
 /*  /menu — los platos de la casa (solo cocina)                        */
 /* ------------------------------------------------------------------ */
 
 export function MenuPage() {
+  const { t } = useI18n();
   const menu = products.filter((p) => p.category === "cocina");
 
   return (
-    <SiteLayout title="Menú" kicker="La cocina · Los fuegos">
-      <p className="page-intro">
-        Los platos de Kinomori, para llevar a tu cocina. Ingredientes,
-        técnica y la receta exacta de la casa.
-      </p>
+    <SiteLayout title={t("nav.menu")} kicker={t("ui.menuKicker")}>
+      <p className="page-intro">{t("ui.menuIntro")}</p>
 
       <div className="card-grid">
         {menu.map((product) => (
@@ -24,17 +23,17 @@ export function MenuPage() {
             className="card"
           >
             <div className="card-media">
-              <img src={product.image} alt={product.name} loading="lazy" />
-              <span className="card-cat">Cocina</span>
+              <img src={product.image} alt={t(product.name)} loading="lazy" />
+              <span className="card-cat">{t(`ui.categories.${product.category}`)}</span>
             </div>
             <div className="card-body">
-              <h2 className="card-name">{product.name}</h2>
-              <p className="card-short">{product.short}</p>
+              <h2 className="card-name">{t(product.name)}</h2>
+              <p className="card-short">{t(product.short)}</p>
               <div className="card-foot">
                 <span className="card-price">
                   {product.price} {product.currency}
                 </span>
-                <span className="card-cta">Ver más →</span>
+                <span className="card-cta">{t("ui.seeMore")}</span>
               </div>
             </div>
           </Link>

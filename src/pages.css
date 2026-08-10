@@ -417,11 +417,21 @@
 
 @media (max-width: 760px) {
   .page-topbar {
-    padding: 16px 20px;
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .page-brand {
+    margin-right: auto;
   }
 
   .page-nav {
-    gap: 14px;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 18px;
+    padding-top: 2px;
   }
 
   .page-nav a {

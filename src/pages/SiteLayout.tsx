@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
+import { useI18n } from "../i18n/I18nContext";
+import { LanguageSwitcher } from "../components/LanguageSwitcher";
 
 /* ------------------------------------------------------------------ */
 /*  Layout simple para páginas de contenido (productos / workshops)    */
@@ -14,6 +16,8 @@ export function SiteLayout({
   title: string;
   kicker?: string;
 }) {
+  const { t } = useI18n();
+
   return (
     <div className="page-shell">
       <header className="page-topbar">
@@ -21,13 +25,14 @@ export function SiteLayout({
           <span className="page-brand-mark" aria-hidden="true" />
           <span>Kinomori</span>
         </Link>
-        <nav className="page-nav" aria-label="Navegación">
-          <Link to="/">El viaje</Link>
-          <Link to="/menu">Menú</Link>
-          <Link to="/te">Té</Link>
-          <Link to="/productos">Tienda</Link>
-          <Link to="/workshops">Workshops</Link>
+        <nav className="page-nav" aria-label={t("nav.journey")}>
+          <Link to="/">{t("nav.journey")}</Link>
+          <Link to="/menu">{t("nav.menu")}</Link>
+          <Link to="/te">{t("nav.tea")}</Link>
+          <Link to="/productos">{t("nav.shop")}</Link>
+          <Link to="/workshops">{t("nav.workshops")}</Link>
         </nav>
+        <LanguageSwitcher compact />
       </header>
 
       <main className="page-main">
@@ -40,8 +45,8 @@ export function SiteLayout({
 
       <footer className="page-footer">
         <span>Kinomori · Tamraght, Marruecos</span>
-        <span>Cocina asiática, té y taller</span>
-        <Link to="/">Volver al viaje</Link>
+        <span>{t("footer.tagline")}</span>
+        <Link to="/">{t("back")}</Link>
       </footer>
     </div>
   );
