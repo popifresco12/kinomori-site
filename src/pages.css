@@ -1,0 +1,453 @@
+/* ------------------------------------------------------------------ */
+/*  Kinomori — páginas de contenido (productos / workshops)            */
+/*  Misma paleta wabi-sabi que el viaje scrollytelling.                */
+/* ------------------------------------------------------------------ */
+
+.page-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 75% 12%, rgba(168, 85, 247, 0.09), transparent 42%),
+    radial-gradient(circle at 18% 82%, rgba(255, 122, 61, 0.08), transparent 46%),
+    var(--night);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Topbar ─────────────────────────────────────────────────────── */
+
+.page-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px clamp(20px, 4.8vw, 72px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(20, 16, 12, 0.82);
+  backdrop-filter: blur(14px);
+}
+
+.page-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.page-brand-mark {
+  width: 14px;
+  height: 20px;
+  border-radius: 90% 10% 90% 10%;
+  transform: rotate(-18deg);
+  background: linear-gradient(145deg, var(--accent-a), var(--accent-b));
+  box-shadow: 0 0 22px rgba(255, 122, 61, 0.4);
+}
+
+.page-nav {
+  display: flex;
+  gap: clamp(16px, 3vw, 34px);
+}
+
+.page-nav a {
+  color: rgba(248, 241, 230, 0.72);
+  text-decoration: none;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+}
+
+.page-nav a:hover {
+  color: var(--accent-a);
+}
+
+/* ── Main ───────────────────────────────────────────────────────── */
+
+.page-main {
+  flex: 1;
+  width: min(1180px, 92vw);
+  margin: 0 auto;
+  padding: clamp(48px, 7vh, 84px) 0 72px;
+}
+
+.page-heading {
+  margin-bottom: clamp(30px, 5vh, 52px);
+}
+
+.page-kicker {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 16px;
+  color: rgba(242, 227, 201, 0.78);
+  font-size: 0.7rem;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.page-kicker::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+}
+
+.page-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.page-intro {
+  max-width: 58ch;
+  margin: 0 0 clamp(30px, 4.5vh, 46px);
+  color: rgba(248, 241, 230, 0.8);
+  font-size: clamp(0.98rem, 1.15vw, 1.1rem);
+  line-height: 1.65;
+}
+
+.page-link {
+  color: var(--accent-a);
+  text-decoration: none;
+}
+
+.page-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Grid de tarjetas ───────────────────────────────────────────── */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: clamp(16px, 2.4vw, 26px);
+}
+
+.card-grid--mini {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 122, 61, 0.45);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.38);
+}
+
+.card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .card-media img {
+  transform: scale(1.05);
+}
+
+.card-cat {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(14, 10, 6, 0.72);
+  backdrop-filter: blur(8px);
+  color: rgba(248, 241, 230, 0.86);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 18px 18px 16px;
+  flex: 1;
+}
+
+.card-name {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.22rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.card-short {
+  margin: 0;
+  color: rgba(248, 241, 230, 0.66);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.card-price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent-a);
+}
+
+.card-cta {
+  color: rgba(248, 241, 230, 0.6);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+}
+
+.card:hover .card-cta {
+  color: var(--accent-a);
+}
+
+/* ── Ficha de detalle ───────────────────────────────────────────── */
+
+.detail {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(24px, 4vw, 52px);
+  align-items: start;
+}
+
+.detail-media {
+  position: sticky;
+  top: 96px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  aspect-ratio: 4 / 3;
+}
+
+.detail-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-short {
+  margin: 0;
+  font-size: 1.14rem;
+  line-height: 1.55;
+  color: rgba(248, 241, 230, 0.9);
+}
+
+.detail-text {
+  margin: 0;
+  color: rgba(248, 241, 230, 0.72);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.detail-price {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 20px 22px;
+  border: 1px solid rgba(255, 122, 61, 0.35);
+  border-radius: 16px;
+  background: rgba(255, 122, 61, 0.07);
+}
+
+.detail-price-amount {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-a);
+}
+
+.detail-price-note {
+  color: rgba(248, 241, 230, 0.6);
+  font-size: 0.82rem;
+}
+
+.detail-specs {
+  margin: 14px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.detail-spec {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 13px 16px;
+  background: rgba(20, 16, 12, 0.55);
+}
+
+.detail-spec dt {
+  color: rgba(248, 241, 230, 0.5);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.detail-spec dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+.detail-includes-title {
+  margin: 14px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.detail-includes {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.detail-includes li {
+  position: relative;
+  padding-left: 26px;
+  color: rgba(248, 241, 230, 0.78);
+  font-size: 0.92rem;
+}
+
+.detail-includes li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 11px;
+  height: 11px;
+  border-radius: 90% 10% 90% 10%;
+  transform: translateY(-50%) rotate(-18deg);
+  background: linear-gradient(145deg, var(--accent-a), var(--accent-b));
+}
+
+.detail-book {
+  margin: 18px 0 0;
+  color: rgba(248, 241, 230, 0.8);
+}
+
+.detail-others {
+  margin-top: clamp(44px, 7vh, 72px);
+}
+
+.detail-others-title {
+  margin: 0 0 20px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────── */
+
+.page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 26px clamp(20px, 4.8vw, 72px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(248, 241, 230, 0.5);
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.page-footer a {
+  color: rgba(248, 241, 230, 0.6);
+  text-decoration: none;
+}
+
+.page-footer a:hover {
+  color: var(--accent-a);
+}
+
+/* ── Móvil ──────────────────────────────────────────────────────── */
+
+@media (max-width: 760px) {
+  .page-topbar {
+    padding: 16px 20px;
+  }
+
+  .page-nav {
+    gap: 14px;
+  }
+
+  .page-nav a {
+    font-size: 0.62rem;
+  }
+
+  .page-main {
+    width: 88vw;
+    padding-top: 40px;
+  }
+
+  .detail {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-media {
+    position: static;
+    aspect-ratio: 16 / 10;
+  }
+
+  .detail-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .page-footer {
+    justify-content: center;
+    text-align: center;
+  }
+}

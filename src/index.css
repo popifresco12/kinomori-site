@@ -1,0 +1,6 @@
+/* Paleta y base — el resto vive en journey.css */
+html,
+body {
+  margin: 0;
+  background: #14100c;
+}

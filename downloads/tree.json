@@ -1,0 +1,453 @@
+{
+  "sha": "57bdceb2bd2bba30cf713822344a45c2aebeff2d",
+  "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/57bdceb2bd2bba30cf713822344a45c2aebeff2d",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94f7ecd49b3a52ae03f7cd697e6b055bd6080bd8",
+      "size": 517,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/94f7ecd49b3a52ae03f7cd697e6b055bd6080bd8"
+    },
+    {
+      "path": ".openai",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c271818871a923c9c06060148f7898ef92c7225b",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/c271818871a923c9c06060148f7898ef92c7225b"
+    },
+    {
+      "path": ".openai/hosting.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46b2e1b0dc94f77e7d1870bed1e7e55a2f346dc4",
+      "size": 91,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/46b2e1b0dc94f77e7d1870bed1e7e55a2f346dc4"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b02db8abbea1818a2aaeac90e5020b77df707394",
+      "size": 3439,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/b02db8abbea1818a2aaeac90e5020b77df707394"
+    },
+    {
+      "path": "app",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d05abb8fdea25c3c2a3b29c4196deee4ed3e1603",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/d05abb8fdea25c3c2a3b29c4196deee4ed3e1603"
+    },
+    {
+      "path": "app/TeaJourney.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e55762bca5cd2b3e824878933d990cdaf3eeb5f4",
+      "size": 8999,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/e55762bca5cd2b3e824878933d990cdaf3eeb5f4"
+    },
+    {
+      "path": "app/chatgpt-auth.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d1fb3534463fb53fc0ff10ce6d5eccebf5964fa",
+      "size": 2404,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/8d1fb3534463fb53fc0ff10ce6d5eccebf5964fa"
+    },
+    {
+      "path": "app/globals.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac497d20806e3cfb945ebaa47ad351c0e4a61641",
+      "size": 7906,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/ac497d20806e3cfb945ebaa47ad351c0e4a61641"
+    },
+    {
+      "path": "app/layout.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "885d3f25aaeb8b857074db15a34bc452def461e5",
+      "size": 1392,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/885d3f25aaeb8b857074db15a34bc452def461e5"
+    },
+    {
+      "path": "app/page.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "247a869421a83f46bad224485f3633c512339a43",
+      "size": 104,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/247a869421a83f46bad224485f3633c512339a43"
+    },
+    {
+      "path": "build",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e4caf579c58061db70eac981f9475c4b07b702f8",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/e4caf579c58061db70eac981f9475c4b07b702f8"
+    },
+    {
+      "path": "build/sites-vite-plugin.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26563fdd77ff1027eeb08917d15d733da79a560a",
+      "size": 1254,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/26563fdd77ff1027eeb08917d15d733da79a560a"
+    },
+    {
+      "path": "db",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3292512192d38a154f3085afbc831fa0d5c10078",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/3292512192d38a154f3085afbc831fa0d5c10078"
+    },
+    {
+      "path": "db/index.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19b379900d94124b674f07ffe2dbba8f70bd8d6d",
+      "size": 423,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/19b379900d94124b674f07ffe2dbba8f70bd8d6d"
+    },
+    {
+      "path": "db/schema.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2dd83cd250ecaa6ac022559fc9640271f2b2dd5",
+      "size": 169,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/d2dd83cd250ecaa6ac022559fc9640271f2b2dd5"
+    },
+    {
+      "path": "drizzle.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2b2f34376984744343453838ce66658ad9d9b6a",
+      "size": 148,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/c2b2f34376984744343453838ce66658ad9d9b6a"
+    },
+    {
+      "path": "drizzle",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "94094670afd3a1249945ed806f797828b31ae5fd",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/94094670afd3a1249945ed806f797828b31ae5fd"
+    },
+    {
+      "path": "drizzle/meta",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dc674b6bbd23ab7cbc0fe552a39185eb2d2d48ff",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/dc674b6bbd23ab7cbc0fe552a39185eb2d2d48ff"
+    },
+    {
+      "path": "drizzle/meta/_journal.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4377507400414768c5915808bf080a1403cf6cb3",
+      "size": 61,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/4377507400414768c5915808bf080a1403cf6cb3"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05e726d1b4201bc8c7716d2b058279676582e8c0",
+      "size": 465,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/05e726d1b4201bc8c7716d2b058279676582e8c0"
+    },
+    {
+      "path": "examples",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e987e3414dd5725d636da9be199bbb35bc0fc640",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/e987e3414dd5725d636da9be199bbb35bc0fc640"
+    },
+    {
+      "path": "examples/d1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8b120fa73e863c8fd9c96f334a4fc3c25f93b98a",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/8b120fa73e863c8fd9c96f334a4fc3c25f93b98a"
+    },
+    {
+      "path": "examples/d1/app",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bb3cc7ced5b6f3b5eb10afb82e4b18cf7318b487",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/bb3cc7ced5b6f3b5eb10afb82e4b18cf7318b487"
+    },
+    {
+      "path": "examples/d1/app/api",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "886b256873237bd27caeec1921de54b2df10350b",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/886b256873237bd27caeec1921de54b2df10350b"
+    },
+    {
+      "path": "examples/d1/app/api/notes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "15349baf2f8ae683fa5422d943bd593f3b38ba59",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/15349baf2f8ae683fa5422d943bd593f3b38ba59"
+    },
+    {
+      "path": "examples/d1/app/api/notes/route.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07f8318c3c290d68163e95aa3e170ad92a235f27",
+      "size": 1700,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/07f8318c3c290d68163e95aa3e170ad92a235f27"
+    },
+    {
+      "path": "examples/d1/db",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a2ce27dd7a5df17cefde6a9b8b205f859ccf2aa3",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/a2ce27dd7a5df17cefde6a9b8b205f859ccf2aa3"
+    },
+    {
+      "path": "examples/d1/db/schema.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bb0c157110799b9b53c767517e0d192b7201f2e",
+      "size": 370,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/7bb0c157110799b9b53c767517e0d192b7201f2e"
+    },
+    {
+      "path": "next.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9ffa3083ad279ecf95fd8eae59cb253e9a539c4",
+      "size": 133,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/e9ffa3083ad279ecf95fd8eae59cb253e9a539c4"
+    },
+    {
+      "path": "package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2aa6a169b65498261c7d54060482172cc6b7878",
+      "size": 382006,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/c2aa6a169b65498261c7d54060482172cc6b7878"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48258158e13a451cee13d5ceb4013ef775b9e639",
+      "size": 1163,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/48258158e13a451cee13d5ceb4013ef775b9e639"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61e36849cf7cfa9f1f71b4a3964a4953e3e243d3",
+      "size": 94,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/61e36849cf7cfa9f1f71b4a3964a4953e3e243d3"
+    },
+    {
+      "path": "public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2879a1e8cd5c5b762d53d8412a2806a165cbd161",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/2879a1e8cd5c5b762d53d8412a2806a165cbd161"
+    },
+    {
+      "path": "public/favicon.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca747cb66b233fedec5ff0c84f97bb4631c05dbf",
+      "size": 712,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/ca747cb66b233fedec5ff0c84f97bb4631c05dbf"
+    },
+    {
+      "path": "public/file.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "004145cddf3f9db91b57b9cb596683c8eb420862",
+      "size": 391,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/004145cddf3f9db91b57b9cb596683c8eb420862"
+    },
+    {
+      "path": "public/globe.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "567f17b0d7c7fb662c16d4357dd74830caf2dccb",
+      "size": 1035,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/567f17b0d7c7fb662c16d4357dd74830caf2dccb"
+    },
+    {
+      "path": "public/media",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0f8db20934bb2c2f87b420579df3fe647b6ad50f",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/0f8db20934bb2c2f87b420579df3fe647b6ad50f"
+    },
+    {
+      "path": "public/media/stills",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e4dd86d2625dd0eafe1f4391958688ba394fe469",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/e4dd86d2625dd0eafe1f4391958688ba394fe469"
+    },
+    {
+      "path": "public/media/stills/01-valley.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4231bbf8eb09953d4e9cdcaa80c7b3d473d403e",
+      "size": 255172,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/f4231bbf8eb09953d4e9cdcaa80c7b3d473d403e"
+    },
+    {
+      "path": "public/media/stills/02-harvest.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13f80cbfd4413530457ef6bbcda3e15002a3cce6",
+      "size": 264270,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/13f80cbfd4413530457ef6bbcda3e15002a3cce6"
+    },
+    {
+      "path": "public/media/stills/03-drying-house.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10efbcfdf4e9d77d6bb8d2b7b37002e98cc10769",
+      "size": 244898,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/10efbcfdf4e9d77d6bb8d2b7b37002e98cc10769"
+    },
+    {
+      "path": "public/media/stills/04-fire-and-form.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29bf1fc5fcf622c6359a8e35014dc50c575f02fd",
+      "size": 191012,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/29bf1fc5fcf622c6359a8e35014dc50c575f02fd"
+    },
+    {
+      "path": "public/media/stills/05-mountain-road.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9c21f88e81b7a00982b8ce50a0351d9316bd7fa",
+      "size": 281452,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/a9c21f88e81b7a00982b8ce50a0351d9316bd7fa"
+    },
+    {
+      "path": "public/media/stills/06-tea-ceremony.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d79775d97034320d5ca5b1eab5cbcfc29e29e1d",
+      "size": 243604,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/5d79775d97034320d5ca5b1eab5cbcfc29e29e1d"
+    },
+    {
+      "path": "public/media/video",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5397eabb37a181ea909b82514805a19be7a9e59d",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/5397eabb37a181ea909b82514805a19be7a9e59d"
+    },
+    {
+      "path": "public/media/video/01-valley-to-harvest.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d211c18c4682091c025d6782e7870e19dad46fc4",
+      "size": 10767020,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/d211c18c4682091c025d6782e7870e19dad46fc4"
+    },
+    {
+      "path": "public/media/video/02-harvest-to-drying-house.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30179761574f96ad9dffa1e24da9007ec28e9a45",
+      "size": 7823991,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/30179761574f96ad9dffa1e24da9007ec28e9a45"
+    },
+    {
+      "path": "public/media/video/03-drying-to-roasting.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3be664f3c99aa39a4a65aefe0825c2a618890af",
+      "size": 7510811,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/c3be664f3c99aa39a4a65aefe0825c2a618890af"
+    },
+    {
+      "path": "public/media/video/04-roasting-to-road.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "254b0b6e931b6191d8946f72f8bf45ca3b3a5576",
+      "size": 8680660,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/254b0b6e931b6191d8946f72f8bf45ca3b3a5576"
+    },
+    {
+      "path": "public/media/video/05-road-to-ceremony.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "223785c720256b267dc7df0a54af2386e1a3d180",
+      "size": 9035636,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/223785c720256b267dc7df0a54af2386e1a3d180"
+    },
+    {
+      "path": "public/og.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e30378fc0c09724abb31d3e2c4a473d17317cec",
+      "size": 1479465,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/8e30378fc0c09724abb31d3e2c4a473d17317cec"
+    },
+    {
+      "path": "public/window.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2b2a44f6ebc70c450043c05a002e7a93ba5d651",
+      "size": 385,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/b2b2a44f6ebc70c450043c05a002e7a93ba5d651"
+    },
+    {
+      "path": "tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "db45508e27d5cb3410648857f2b663e2232afc3d",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/db45508e27d5cb3410648857f2b663e2232afc3d"
+    },
+    {
+      "path": "tests/rendered-html.test.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11ec6299677592dbf52197652aea6b097c3f9d0e",
+      "size": 3547,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/11ec6299677592dbf52197652aea6b097c3f9d0e"
+    },
+    {
+      "path": "tsconfig.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a13f90a773b0facb675bf5b1a8239c8f33d36f5",
+      "size": 666,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/3a13f90a773b0facb675bf5b1a8239c8f33d36f5"
+    },
+    {
+      "path": "vite.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae08f93676d3ba1a026104ec8774505bf8d6725e",
+      "size": 1697,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/ae08f93676d3ba1a026104ec8774505bf8d6725e"
+    },
+    {
+      "path": "worker",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "534262246ef7d02635110a3989accfbd8a3494c9",
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/trees/534262246ef7d02635110a3989accfbd8a3494c9"
+    },
+    {
+      "path": "worker/index.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3cd137862c517c1053481cf6efdf6dd4d423cdc",
+      "size": 1731,
+      "url": "https://api.github.com/repos/amirmushichge/tea-leaf-scroll-world/git/blobs/b3cd137862c517c1053481cf6efdf6dd4d423cdc"
+    }
+  ],
+  "truncated": false
+}
