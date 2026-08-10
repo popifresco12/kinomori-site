@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { KinomoriWorld } from "./KinomoriWorld";
 import { ProductosPage } from "./pages/ProductosPage";
 import { ProductoDetallePage } from "./pages/ProductoDetallePage";
+import { MenuPage } from "./pages/MenuPage";
+import { TePage } from "./pages/TePage";
 import { WorkshopsPage } from "./pages/WorkshopsPage";
 import { WorkshopDetallePage } from "./pages/WorkshopDetallePage";
 import "./journey.css";
@@ -23,6 +25,8 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<KinomoriWorld />} />
+        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/te" element={<TePage />} />
         <Route path="/productos" element={<ProductosPage />} />
         <Route path="/productos/:slug" element={<ProductoDetallePage />} />
         <Route path="/workshops" element={<WorkshopsPage />} />

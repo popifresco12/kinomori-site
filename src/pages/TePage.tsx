@@ -3,30 +3,21 @@ import { products } from "../data";
 import { SiteLayout } from "./SiteLayout";
 
 /* ------------------------------------------------------------------ */
-/*  /productos — tienda: objetos, complementos y ropa                  */
-/*  (los platos van en /menu, los tés y matchas en /te)                */
+/*  /te — tés y matchas (solo categoría té)                            */
 /* ------------------------------------------------------------------ */
 
-const CATEGORY_LABEL: Record<string, string> = {
-  complementos: "Complementos",
-  objetos: "Objetos",
-  ropa: "Ropa",
-};
-
-const SHOP_CATEGORIES = ["complementos", "objetos", "ropa"];
-
-export function ProductosPage() {
-  const shop = products.filter((p) => SHOP_CATEGORIES.includes(p.category));
+export function TePage() {
+  const teas = products.filter((p) => p.category === "te");
 
   return (
-    <SiteLayout title="Tienda" kicker="Objetos · Hechos para durar">
+    <SiteLayout title="Té" kicker="La sala de té · La pausa">
       <p className="page-intro">
-        Objetos que guardan tiempo: artesanía, ropa y teteras hechas a mano.
-        Precio y detalles en cada página — el carrito llegará más adelante.
+        Matcha batido a mano y oolongs que se abren infusión a infusión.
+        El té de Kinomori, para llevar a casa.
       </p>
 
       <div className="card-grid">
-        {shop.map((product) => (
+        {teas.map((product) => (
           <Link
             key={product.slug}
             to={`/productos/${product.slug}`}
@@ -34,9 +25,7 @@ export function ProductosPage() {
           >
             <div className="card-media">
               <img src={product.image} alt={product.name} loading="lazy" />
-              <span className="card-cat">
-                {CATEGORY_LABEL[product.category]}
-              </span>
+              <span className="card-cat">Té</span>
             </div>
             <div className="card-body">
               <h2 className="card-name">{product.name}</h2>

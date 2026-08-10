@@ -3,30 +3,21 @@ import { products } from "../data";
 import { SiteLayout } from "./SiteLayout";
 
 /* ------------------------------------------------------------------ */
-/*  /productos — tienda: objetos, complementos y ropa                  */
-/*  (los platos van en /menu, los tés y matchas en /te)                */
+/*  /menu — los platos de la casa (solo cocina)                        */
 /* ------------------------------------------------------------------ */
 
-const CATEGORY_LABEL: Record<string, string> = {
-  complementos: "Complementos",
-  objetos: "Objetos",
-  ropa: "Ropa",
-};
-
-const SHOP_CATEGORIES = ["complementos", "objetos", "ropa"];
-
-export function ProductosPage() {
-  const shop = products.filter((p) => SHOP_CATEGORIES.includes(p.category));
+export function MenuPage() {
+  const menu = products.filter((p) => p.category === "cocina");
 
   return (
-    <SiteLayout title="Tienda" kicker="Objetos · Hechos para durar">
+    <SiteLayout title="Menú" kicker="La cocina · Los fuegos">
       <p className="page-intro">
-        Objetos que guardan tiempo: artesanía, ropa y teteras hechas a mano.
-        Precio y detalles en cada página — el carrito llegará más adelante.
+        Los platos de Kinomori, para llevar a tu cocina. Ingredientes,
+        técnica y la receta exacta de la casa.
       </p>
 
       <div className="card-grid">
-        {shop.map((product) => (
+        {menu.map((product) => (
           <Link
             key={product.slug}
             to={`/productos/${product.slug}`}
@@ -34,9 +25,7 @@ export function ProductosPage() {
           >
             <div className="card-media">
               <img src={product.image} alt={product.name} loading="lazy" />
-              <span className="card-cat">
-                {CATEGORY_LABEL[product.category]}
-              </span>
+              <span className="card-cat">Cocina</span>
             </div>
             <div className="card-body">
               <h2 className="card-name">{product.name}</h2>

@@ -23,7 +23,9 @@ export function SiteLayout({
         </Link>
         <nav className="page-nav" aria-label="Navegación">
           <Link to="/">El viaje</Link>
-          <Link to="/productos">Productos</Link>
+          <Link to="/menu">Menú</Link>
+          <Link to="/te">Té</Link>
+          <Link to="/productos">Tienda</Link>
           <Link to="/workshops">Workshops</Link>
         </nav>
       </header>

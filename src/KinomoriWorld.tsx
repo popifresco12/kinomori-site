@@ -38,7 +38,7 @@ const SCENES = [
     body: "Nasi goreng salta sobre la llama, los dumplings crujen y el chile despierta los sentidos. La cocina asiática encuentra su casa en la costa, sin olvidar de dónde vino.",
     note: "Fuego · Vapor · Sésamo",
     img: "scenes/scene04-wok.mp4",
-    cta: { to: "/productos", label: "Ver productos" },
+    cta: { to: "/menu", label: "Ver menú" },
   },
   {
     label: "Tea Room",
@@ -47,7 +47,7 @@ const SCENES = [
     body: "Matcha batido a mano, oolong que se abre en la tercera infusión. En la sala del té no hay prisa: solo el agua, la cerámica y el momento. El té se sirve y también se lleva a casa.",
     note: "Matcha · Oolong · Silencio",
     img: "media/workshop-ceremonia-te.webp",
-    cta: { to: "/productos", label: "Ver el té" },
+    cta: { to: "/te", label: "Ver el té" },
   },
   {
     label: "Shopping",
@@ -64,7 +64,7 @@ const SCENES = [
     title: "El bosque se aprende con las manos.",
     body: "Clases de wok, ceremonia del té, dumplings a mano y aceite de argán con aroma. No venimos a mirar: venimos a ensuciarnos las manos y llevarnos la técnica a casa.",
     note: "Cocina · Té · Argan oil",
-    img: "media/workshop-wok-desde-cero.webp",
+    img: "media/workshop-dumplings-a-mano.webp",
     cta: { to: "/workshops", label: "Ver workshops" },
   },
 ];

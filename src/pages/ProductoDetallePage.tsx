@@ -10,6 +10,7 @@ const CATEGORY_LABEL: Record<string, string> = {
   cocina: "Cocina",
   te: "Té",
   complementos: "Complementos",
+  objetos: "Objetos",
   ropa: "Ropa",
 };
 

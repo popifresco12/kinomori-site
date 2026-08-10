@@ -5,7 +5,7 @@
 export interface Product {
   slug: string;
   name: string;
-  category: "cocina" | "te" | "complementos" | "ropa";
+  category: "cocina" | "te" | "complementos" | "ropa" | "objetos";
   price: number;
   currency: string;
   short: string;
@@ -167,7 +167,7 @@ export const products: Product[] = [
   {
     slug: "tetera-hierro",
     name: "Tetera de hierro · Tetsubin",
-    category: "te",
+    category: "objetos",
     price: 48,
     currency: "€",
     short: "Tetsubin de 0.8L: el agua sabe mejor, el té también.",
