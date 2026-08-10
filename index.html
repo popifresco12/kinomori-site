@@ -9,6 +9,16 @@
       content="Kinomori · El viaje de la cocina asiática hasta Tamraght, Marruecos"
     />
     <title>Kinomori · Tamraght — El viaje de la cocina asiática</title>
+    <script>
+      // SPA fallback: restaura la ruta guardada por 404.html (GitHub Pages)
+      ;(function () {
+        var r = sessionStorage.getItem(":kinomori-redirect");
+        if (r) {
+          sessionStorage.removeItem(":kinomori-redirect");
+          history.replaceState(null, "", r);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

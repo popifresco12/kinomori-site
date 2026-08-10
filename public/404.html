@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kinomori</title>
+    <script>
+      // SPA fallback para GitHub Pages: guarda la ruta pedida y va al home,
+      // donde index.html restaura la ruta y React Router la renderiza.
+      sessionStorage.setItem(":kinomori-redirect", location.pathname + location.search + location.hash);
+      location.replace("/kinomori-site/");
+    </script>
+  </head>
+  <body></body>
+</html>
