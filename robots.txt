@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://popifresco12.github.io/kinomori-site/sitemap.xml
