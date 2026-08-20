@@ -11,13 +11,15 @@ import { LanguageSwitcher } from "./components/LanguageSwitcher";
 
 /** Datos estructurales de cada escena; el texto vive en i18n. */
 const SCENES = [
-  { img: "scenes/scene01-market.mp4", cta: undefined as { to: string } | undefined },
-  { img: "scenes/scene02-ship.mp4", cta: undefined },
-  { img: "scenes/scene03-tamraght.mp4", cta: undefined },
-  { img: "scenes/scene04-wok.mp4", cta: { to: "/menu" } },
-  { img: "media/workshop-ceremonia-te.webp", cta: { to: "/te" } },
-  { img: "media/product-pulsera-zen.webp", cta: { to: "/productos" } },
-  { img: "media/workshop-dumplings-a-mano.webp", cta: { to: "/workshops" } },
+  { img: "scenes/scene01-cocina.webp", cta: undefined as { to: string } | undefined },
+  { img: "scenes/scene02-cocina-detalle.webp", cta: { to: "/menu" } },
+  { img: "scenes/scene03-tea-room.webp", cta: undefined },
+  { img: "scenes/scene04-matcha.webp", cta: { to: "/te" } },
+  { img: "scenes/scene05-productos.webp", cta: { to: "/productos" } },
+  { img: "scenes/scene06-te-products.webp", cta: undefined },
+  { img: "scenes/scene07-surf.webp", cta: undefined },
+  { img: "scenes/scene08-workshops.webp", cta: { to: "/workshops" } },
+  { img: "scenes/scene09-local.webp", cta: undefined },
 ];
 
 const clamp = (v: number, min = 0, max = 1) => Math.min(max, Math.max(min, v));

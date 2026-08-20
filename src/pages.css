@@ -461,3 +461,61 @@
     text-align: center;
   }
 }
+
+/* ── Menú del restaurante ─────────────────────────────── */
+.menu-section {
+  margin: 2.5rem 0 1rem;
+}
+
+.menu-section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text, #2b2b2b);
+  margin-bottom: 0.3rem;
+}
+
+.menu-section-note {
+  font-size: 0.9rem;
+  color: var(--muted, #888);
+  margin-bottom: 1.2rem;
+}
+
+.menu-list {
+  border-top: 1px solid var(--border, #e5e5e5);
+}
+
+.menu-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0.2rem;
+  border-bottom: 1px solid var(--border, #e5e5e5);
+}
+
+.menu-row-info {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.menu-row-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.menu-row-cat {
+  font-size: 0.75rem;
+  color: var(--muted, #888);
+  background: var(--surface, #f4f4f4);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.menu-row-price {
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  color: var(--text, #2b2b2b);
+}
