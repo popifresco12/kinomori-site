@@ -110,8 +110,8 @@ export function KinomoriWorld() {
 
         <header className="journey-topbar">
           <div className="journey-brand">
-            <span className="journey-brand-mark" aria-hidden="true" />
-            <span>Kinomori</span>
+            <span className="journey-brand-kinomori">Kinomori</span>
+            <span className="journey-brand-kanji">木の森</span>
           </div>
           <div className="journey-meta">
             <span>

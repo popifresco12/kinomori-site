@@ -22,8 +22,8 @@ export function SiteLayout({
     <div className="page-shell">
       <header className="page-topbar">
         <Link to="/" className="page-brand">
-          <span className="page-brand-mark" aria-hidden="true" />
-          <span>Kinomori</span>
+          <span className="page-brand-kinomori">Kinomori</span>
+          <span className="page-brand-kanji">木の森</span>
         </Link>
         <nav className="page-nav" aria-label={t("nav.journey")}>
           <Link to="/">{t("nav.journey")}</Link>

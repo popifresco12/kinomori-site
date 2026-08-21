@@ -32,23 +32,29 @@
 
 .page-brand {
   display: flex;
-  align-items: center;
-  gap: 13px;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
   color: var(--ink);
   text-decoration: none;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  font-weight: 700;
+  letter-spacing: 0.22em;
 }
 
-.page-brand-mark {
-  width: 14px;
-  height: 20px;
-  border-radius: 90% 10% 90% 10%;
-  transform: rotate(-18deg);
-  background: linear-gradient(145deg, var(--accent-a), var(--accent-b));
-  box-shadow: 0 0 22px rgba(255, 122, 61, 0.4);
+.page-brand-kinomori {
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.22em;
+}
+
+.page-brand-kanji {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+  font-size: 0.62rem;
+  color: var(--accent-a);
+  letter-spacing: 0.4em;
+  margin-left: 0.2em;
+  opacity: 0.9;
 }
 
 .page-nav {
