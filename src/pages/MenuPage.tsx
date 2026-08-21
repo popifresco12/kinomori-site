@@ -1,22 +1,20 @@
-import { Link } from "react-router-dom";
-import { products } from "../data";
 import { SiteLayout } from "./SiteLayout";
 import { useI18n } from "../i18n/I18nContext";
 
 /* ------------------------------------------------------------------ */
-/*  /menu — el restaurante (platos reales) + kits para casa            */
+/*  /menu — el restaurante (platos reales servidos en la casa)         */
 /* ------------------------------------------------------------------ */
 
 /** Platos reales servidos en el restaurante (del registro de comandas). */
 const RESTAURANT_MENU = [
-  { name: "Nasi Goreng", cat: "main", price: 56 },
+  { name: "Nasi Goreng", cat: "main", price: 56, image: "media/product-nasi-goreng-kit.webp" },
   { name: "Peanut Noodles", cat: "main", price: 63 },
   { name: "Dumpling Beef", cat: "starter", price: 62 },
   { name: "Dumpling Veg", cat: "starter", price: 58 },
   { name: "Mee Siam", cat: "main", price: 52 },
   { name: "Eggplant Lover", cat: "main", price: 62 },
   { name: "Zhajiang Noodles", cat: "main", price: 57 },
-  { name: "Dan Dan Noodles", cat: "main", price: 57 },
+  { name: "Dan Dan Noodles", cat: "main", price: 57, image: "media/product-dan-dan-noodles.webp" },
   { name: "Korean BBQ Bowl", cat: "main", price: 65 },
   { name: "Biang Biang Mian", cat: "main", price: 79 },
   { name: "Pho", cat: "main", price: 80 },
@@ -25,7 +23,8 @@ const RESTAURANT_MENU = [
 
 export function MenuPage() {
   const { t } = useI18n();
-  const menu = products.filter((p) => p.category === "cocina");
+  const withPhoto = RESTAURANT_MENU.filter((dish) => dish.image);
+  const withoutPhoto = RESTAURANT_MENU.filter((dish) => !dish.image);
 
   return (
     <SiteLayout title={t("nav.menu")} kicker={t("ui.menuKicker")}>
@@ -34,8 +33,30 @@ export function MenuPage() {
       <section className="menu-section">
         <h2 className="menu-section-title">{t("ui.restaurantMenu")}</h2>
         <p className="menu-section-note">{t("ui.restaurantMenuNote")}</p>
+
+        {withPhoto.length > 0 && (
+          <div className="card-grid" style={{ marginBottom: "clamp(18px, 2.4vw, 26px)" }}>
+            {withPhoto.map((dish) => (
+              <div className="card" key={dish.name}>
+                <div className="card-media">
+                  <img src={dish.image} alt={dish.name} loading="lazy" />
+                  <span className="card-cat">{t(`ui.dishCats.${dish.cat}`)}</span>
+                </div>
+                <div className="card-body">
+                  <h2 className="card-name">{dish.name}</h2>
+                  <div className="card-foot">
+                    <span className="card-price">
+                      {dish.price} {t("ui.mad")}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
         <div className="menu-list">
-          {RESTAURANT_MENU.map((dish) => (
+          {withoutPhoto.map((dish) => (
             <div className="menu-row" key={dish.name}>
               <div className="menu-row-info">
                 <span className="menu-row-name">{dish.name}</span>
@@ -50,34 +71,6 @@ export function MenuPage() {
           ))}
         </div>
       </section>
-
-      <h2 className="menu-section-title">{t("ui.homeKits")}</h2>
-      <p className="menu-section-note">{t("ui.homeKitsNote")}</p>
-
-      <div className="card-grid">
-        {menu.map((product) => (
-          <Link
-            key={product.slug}
-            to={`/productos/${product.slug}`}
-            className="card"
-          >
-            <div className="card-media">
-              <img src={product.image} alt={t(product.name)} loading="lazy" />
-              <span className="card-cat">{t(`ui.categories.${product.category}`)}</span>
-            </div>
-            <div className="card-body">
-              <h2 className="card-name">{t(product.name)}</h2>
-              <p className="card-short">{t(product.short)}</p>
-              <div className="card-foot">
-                <span className="card-price">
-                  {product.price} {product.currency}
-                </span>
-                <span className="card-cta">{t("ui.seeMore")}</span>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
     </SiteLayout>
   );
 }
