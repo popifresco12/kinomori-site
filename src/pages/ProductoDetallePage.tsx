@@ -2,10 +2,15 @@ import { Link, useParams } from "react-router-dom";
 import { products } from "../data";
 import { SiteLayout } from "./SiteLayout";
 import { useI18n } from "../i18n/I18nContext";
+import { CONTACT_EMAIL } from "../contact";
 
 /* ------------------------------------------------------------------ */
 /*  /productos/:slug — ficha individual de un producto                 */
 /* ------------------------------------------------------------------ */
+
+function productSubject(productName: string) {
+  return encodeURIComponent(`Reserve: ${productName}`);
+}
 
 export function ProductoDetallePage() {
   const { slug } = useParams();
@@ -52,6 +57,13 @@ export function ProductoDetallePage() {
             </span>
             <span className="detail-price-note">{t("ui.noCartYet")}</span>
           </div>
+
+          <a
+            className="detail-reserve"
+            href={`mailto:${CONTACT_EMAIL}?subject=${productSubject(t(product.name))}`}
+          >
+            {t("ui.writeUs")}
+          </a>
 
           <dl className="detail-specs">
             {product.details.map((d) => (

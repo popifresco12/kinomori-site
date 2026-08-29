@@ -133,6 +133,25 @@
   text-decoration: underline;
 }
 
+/* ── Botón reserva / contacto (ficha de producto) ────────────────── */
+
+.detail-reserve {
+  display: inline-block;
+  margin: 4px 0 18px;
+  padding: 12px 26px;
+  background: var(--accent-a);
+  color: var(--surface-a, #fff);
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.detail-reserve:hover {
+  transform: translateY(-1px);
+  opacity: 0.88;
+}
+
 /* ── Grid de tarjetas ───────────────────────────────────────────── */
 
 .card-grid {
