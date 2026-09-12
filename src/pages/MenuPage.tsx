@@ -108,6 +108,7 @@ const MENU: MenuSection[] = [
         name: "Peanut Sauce Chill Noodle",
         price: "65",
         desc: "Secret peanut sauce, chicken (optional), cucumber, boiled egg and peanuts",
+        image: "media/dish-peanut-sauce-chill-noodle.webp",
       },
     ],
   },
