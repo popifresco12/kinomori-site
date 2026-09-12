@@ -45,6 +45,7 @@ const MENU: MenuSection[] = [
         price: "70 / 80",
         desc: "Rice with sesame oil, Korean Gochujang sauce, seasonal veggies (chicken) and fried egg on top",
         spicy: true,
+        image: "media/dish-korean-bibimbap.webp",
       },
       {
         name: "Thai Green Curry",
@@ -90,6 +91,7 @@ const MENU: MenuSection[] = [
         name: "Beijing ZhaJiang Noodle",
         price: "75",
         desc: "Fried soybean beef sauce, fresh veggies and boiled egg",
+        image: "media/dish-beijing-zhajiang.webp",
       },
       {
         name: "Thai Yum Sen Mee Gai",
