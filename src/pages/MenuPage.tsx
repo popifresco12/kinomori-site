@@ -121,7 +121,7 @@ const MENU: MenuSection[] = [
       { name: "Warm Pot Black Tea", price: "25" },
       { name: "Bottle of Water", price: "10 / 20", image: "media/dish-bottle-of-water.webp" },
       { name: "Coca Cola", price: "20", image: "media/dish-coca-cola.webp" },
-      { name: "Sparkling Water", price: "15" },
+      { name: "Sparkling Water", price: "15", image: "media/dish-sparkling-water.webp" },
     ],
   },
 ];
