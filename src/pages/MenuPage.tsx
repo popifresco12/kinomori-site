@@ -2,32 +2,123 @@ import { SiteLayout } from "./SiteLayout";
 import { useI18n } from "../i18n/I18nContext";
 
 /* ------------------------------------------------------------------ */
-/*  /menu — el restaurante (platos reales servidos en la casa)         */
+/*  /menu — la carta real del restaurante                              */
+/*  Orden y nombres tomados de la carta de Kinomori (sep 2026):        */
+/*  Dumplings → Rice → Noodle & Pho → Drinks                           */
 /* ------------------------------------------------------------------ */
 
 interface Dish {
   name: string;
-  cat: "main" | "starter";
-  price: number;
+  /** Precio tal y como figura en la carta; admite dos (veg / pollo) */
+  price: string;
+  desc?: string;
   /** Ruta dentro de /public (ej. "media/dish-nasi-goreng.webp"). Sin foto → placeholder */
   image?: string;
+  spicy?: boolean;
 }
 
-/** Platos reales servidos en el restaurante (del registro de comandas).
- *  Modo tarjeta: cada plato se muestra como tarjeta con nombre, categoría y precio. */
-const RESTAURANT_MENU: Dish[] = [
-  { name: "Nasi Goreng", cat: "main", price: 56, image: "media/product-nasi-goreng-kit.webp" },
-  { name: "Peanut Noodles", cat: "main", price: 63 },
-  { name: "Dumpling Beef", cat: "starter", price: 62 },
-  { name: "Dumpling Veg", cat: "starter", price: 58 },
-  { name: "Mee Siam", cat: "main", price: 52 },
-  { name: "Eggplant Lover", cat: "main", price: 62 },
-  { name: "Zhajiang Noodles", cat: "main", price: 57 },
-  { name: "Dan Dan Noodles", cat: "main", price: 57, image: "media/product-dan-dan-noodles.webp" },
-  { name: "Korean BBQ Bowl", cat: "main", price: 65 },
-  { name: "Biang Biang Mian", cat: "main", price: 79 },
-  { name: "Pho", cat: "main", price: 80 },
-  { name: "Kung Pao", cat: "main", price: 64 },
+interface MenuSection {
+  id: "dumplings" | "rice" | "noodles" | "drinks";
+  note?: string;
+  items: Dish[];
+}
+
+const MENU: MenuSection[] = [
+  {
+    id: "dumplings",
+    note: "6 pieces · Crispy / Sichuan Spicy / Soup",
+    items: [
+      { name: "Beef Filling", price: "65", desc: "Beef, onion, carrot" },
+      { name: "Veggie Filling", price: "60", desc: "Zucchini, carrot, egg, onion, sesame" },
+    ],
+  },
+  {
+    id: "rice",
+    items: [
+      {
+        name: "Nasi Goreng",
+        price: "65 / 70",
+        desc: "Indonesian fried rice with seasonal veggies (chicken) and fried egg on top",
+      },
+      {
+        name: "Korean Bibimbap",
+        price: "70 / 80",
+        desc: "Rice with sesame oil, Korean Gochujang sauce, seasonal veggies (chicken) and fried egg on top",
+        spicy: true,
+      },
+      {
+        name: "Thai Green Curry",
+        price: "70 / 80",
+        desc: "Eggplant, long beans, carrot, zucchini (chicken), coconut cream and half boiled egg",
+        spicy: true,
+      },
+      {
+        name: "Hainan Chicken",
+        price: "80",
+        desc: "Extra tender chicken thigh with ginger leek, caramel soy sauce, cucumber and boiled egg",
+      },
+      {
+        name: "Thai Kra Pao Beef Rice",
+        price: "75",
+        desc: "Beef, basil, mint, chili, red pepper, long beans and fried egg on top",
+        spicy: true,
+      },
+      {
+        name: "KungPao Chicken",
+        price: "75",
+        desc: "Stir-fried chicken with sweet & sour sauce, peanuts, carrot, cucumber and spring onion",
+      },
+    ],
+  },
+  {
+    id: "noodles",
+    items: [
+      {
+        name: "Mie Goreng",
+        price: "65 / 70",
+        desc: "Indonesian fried noodle with egg & veggies (chicken)",
+      },
+      {
+        name: "Sichuan Dandan Noodle",
+        price: "75",
+        desc: "Sichuan chili beef sauce, chives, boiled egg and peanut",
+        spicy: true,
+      },
+      {
+        name: "Beijing ZhaJiang Noodle",
+        price: "75",
+        desc: "Fried soybean beef sauce, fresh veggies and boiled egg",
+      },
+      {
+        name: "Thai Yum Sen Mee Gai",
+        price: "75",
+        desc: "Cold thin rice noodle tossed with chicken, fresh herbs, veggies, lime and Thai dressing",
+        spicy: true,
+      },
+      {
+        name: "Vietnamese Pho Ga",
+        price: "75",
+        desc: "Traditional chicken broth with wide rice noodle, chicken, herbs and chili · Soup or Dry",
+      },
+      {
+        name: "Peanut Sauce Chill Noodle",
+        price: "65",
+        desc: "Secret peanut sauce, chicken (optional), cucumber, boiled egg and peanuts",
+      },
+    ],
+  },
+  {
+    id: "drinks",
+    items: [
+      { name: "Cold Brew Oolong Tea", price: "20" },
+      { name: "Homemade VC Lemonnade", price: "25" },
+      { name: "Fresh Orange Juice", price: "25" },
+      { name: "Warm Pot Black Tea", price: "25" },
+      { name: "Bottle of Water", price: "10 / 20" },
+      { name: "Coca Cola", price: "20" },
+      { name: "Sparkling Water", price: "15" },
+    ],
+  },
 ];
 
 export function MenuPage() {
@@ -37,33 +128,38 @@ export function MenuPage() {
     <SiteLayout title={t("nav.menu")} kicker={t("ui.menuKicker")}>
       <p className="page-intro">{t("ui.menuIntro")}</p>
 
-      <section className="menu-section">
-        <h2 className="menu-section-title">{t("ui.restaurantMenu")}</h2>
-        <p className="menu-section-note">{t("ui.restaurantMenuNote")}</p>
+      {MENU.map((section) => (
+        <section className="menu-section" key={section.id}>
+          <h2 className="menu-section-title">{t(`ui.dishCats.${section.id}`)}</h2>
+          {section.note && <p className="menu-section-note">{section.note}</p>}
 
-        <div className="card-grid">
-          {RESTAURANT_MENU.map((dish) => (
-            <div className="card" key={dish.name}>
-              <div className={dish.image ? "card-media" : "card-media card-media--empty"}>
-                {dish.image ? (
-                  <img src={dish.image} alt={dish.name} loading="lazy" />
-                ) : (
-                  <span>{dish.name}</span>
-                )}
-                <span className="card-cat">{t(`ui.dishCats.${dish.cat}`)}</span>
-              </div>
-              <div className="card-body">
-                <h2 className="card-name">{dish.name}</h2>
-                <div className="card-foot">
-                  <span className="card-price">
-                    {dish.price} {t("ui.mad")}
-                  </span>
+          <div className="card-grid">
+            {section.items.map((dish) => (
+              <div className="card" key={dish.name}>
+                <div className={dish.image ? "card-media" : "card-media card-media--empty"}>
+                  {dish.image ? (
+                    <img src={dish.image} alt={dish.name} loading="lazy" />
+                  ) : (
+                    <span>{dish.name}</span>
+                  )}
+                </div>
+                <div className="card-body">
+                  <h3 className="card-name">
+                    {dish.name}
+                    {dish.spicy && <span aria-label="spicy"> 🌶</span>}
+                  </h3>
+                  {dish.desc && <p className="card-short">{dish.desc}</p>}
+                  <div className="card-foot">
+                    <span className="card-price">
+                      {dish.price} {t("ui.mad")}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
+      ))}
     </SiteLayout>
   );
 }

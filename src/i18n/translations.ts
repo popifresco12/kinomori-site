@@ -56,7 +56,7 @@ type Dict = {
     restaurantMenuNote: string;
     homeKits: string;
     homeKitsNote: string;
-    dishCats: { main: string; starter: string };
+    dishCats: { dumplings: string; rice: string; noodles: string; drinks: string };
     mad: string;
   };
   scenes: {
@@ -132,7 +132,7 @@ const en: Dict = {
     restaurantMenuNote: "What we serve at the house — from the actual kitchen log.",
     homeKits: "Cook it at home",
     homeKitsNote: "The same dishes, as kits to cook in your kitchen.",
-    dishCats: { main: "Main", starter: "Starter" },
+    dishCats: { dumplings: "Dumplings", rice: "Rice", noodles: "Noodle & Pho", drinks: "Drinks" },
     mad: "MAD",
   },
   scenes: [
@@ -469,7 +469,7 @@ const fr: Dict = {
     restaurantMenuNote: "Ce que nous servons à la maison — d'après le registre réel de la cuisine.",
     homeKits: "Cuisinez à la maison",
     homeKitsNote: "Les mêmes plats, en kits à cuisiner chez vous.",
-    dishCats: { main: "Plat", starter: "Entrée" },
+    dishCats: { dumplings: "Raviolis", rice: "Riz", noodles: "Nouilles & Pho", drinks: "Boissons" },
     mad: "MAD",
   },
   scenes: [
@@ -806,7 +806,7 @@ const es: Dict = {
     restaurantMenuNote: "Lo que servimos en la casa — del registro real de la cocina.",
     homeKits: "Cocina en casa",
     homeKitsNote: "Los mismos platos, en kits para cocinar en tu cocina.",
-    dishCats: { main: "Principal", starter: "Entrante" },
+    dishCats: { dumplings: "Dumplings", rice: "Arroz", noodles: "Fideos & Pho", drinks: "Bebidas" },
     mad: "MAD",
   },
   scenes: [
@@ -1139,7 +1139,7 @@ const zh: Dict = {
     restaurantMenuNote: "我们在店里供应的菜肴——来自真实的厨房记录。",
     homeKits: "在家烹饪",
     homeKitsNote: "同样的菜肴，做成套件，在家烹饪。",
-    dishCats: { main: "主菜", starter: "前菜" },
+    dishCats: { dumplings: "饺子", rice: "米饭", noodles: "面条 & 河粉", drinks: "饮品" },
     mad: "MAD",
   },
   scenes: [
@@ -1472,7 +1472,7 @@ const ja: Dict = {
     restaurantMenuNote: "店で提供している料理——実際の厨房記録から。",
     homeKits: "家で作る",
     homeKitsNote: "同じ料理をキットにして、ご自宅で。",
-    dishCats: { main: "メイン", starter: "前菜" },
+    dishCats: { dumplings: "餃子", rice: "ご飯", noodles: "麺 & フォー", drinks: "飲み物" },
     mad: "MAD",
   },
   scenes: [
