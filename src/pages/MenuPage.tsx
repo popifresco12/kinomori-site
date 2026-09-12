@@ -51,11 +51,13 @@ const MENU: MenuSection[] = [
         price: "70 / 80",
         desc: "Eggplant, long beans, carrot, zucchini (chicken), coconut cream and half boiled egg",
         spicy: true,
+        image: "media/dish-thai-green-curry.webp",
       },
       {
         name: "Hainan Chicken",
         price: "80",
         desc: "Extra tender chicken thigh with ginger leek, caramel soy sauce, cucumber and boiled egg",
+        image: "media/dish-hainan-chicken.webp",
       },
       {
         name: "Thai Kra Pao Beef Rice",
