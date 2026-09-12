@@ -5,8 +5,17 @@ import { useI18n } from "../i18n/I18nContext";
 /*  /menu — el restaurante (platos reales servidos en la casa)         */
 /* ------------------------------------------------------------------ */
 
-/** Platos reales servidos en el restaurante (del registro de comandas). */
-const RESTAURANT_MENU = [
+interface Dish {
+  name: string;
+  cat: "main" | "starter";
+  price: number;
+  /** Ruta dentro de /public (ej. "media/dish-nasi-goreng.webp"). Sin foto → placeholder */
+  image?: string;
+}
+
+/** Platos reales servidos en el restaurante (del registro de comandas).
+ *  Modo tarjeta: cada plato se muestra como tarjeta con nombre, categoría y precio. */
+const RESTAURANT_MENU: Dish[] = [
   { name: "Nasi Goreng", cat: "main", price: 56, image: "media/product-nasi-goreng-kit.webp" },
   { name: "Peanut Noodles", cat: "main", price: 63 },
   { name: "Dumpling Beef", cat: "starter", price: 62 },
@@ -23,8 +32,6 @@ const RESTAURANT_MENU = [
 
 export function MenuPage() {
   const { t } = useI18n();
-  const withPhoto = RESTAURANT_MENU.filter((dish) => dish.image);
-  const withoutPhoto = RESTAURANT_MENU.filter((dish) => !dish.image);
 
   return (
     <SiteLayout title={t("nav.menu")} kicker={t("ui.menuKicker")}>
@@ -34,39 +41,25 @@ export function MenuPage() {
         <h2 className="menu-section-title">{t("ui.restaurantMenu")}</h2>
         <p className="menu-section-note">{t("ui.restaurantMenuNote")}</p>
 
-        {withPhoto.length > 0 && (
-          <div className="card-grid" style={{ marginBottom: "clamp(18px, 2.4vw, 26px)" }}>
-            {withPhoto.map((dish) => (
-              <div className="card" key={dish.name}>
-                <div className="card-media">
+        <div className="card-grid">
+          {RESTAURANT_MENU.map((dish) => (
+            <div className="card" key={dish.name}>
+              <div className={dish.image ? "card-media" : "card-media card-media--empty"}>
+                {dish.image ? (
                   <img src={dish.image} alt={dish.name} loading="lazy" />
-                  <span className="card-cat">{t(`ui.dishCats.${dish.cat}`)}</span>
-                </div>
-                <div className="card-body">
-                  <h2 className="card-name">{dish.name}</h2>
-                  <div className="card-foot">
-                    <span className="card-price">
-                      {dish.price} {t("ui.mad")}
-                    </span>
-                  </div>
+                ) : (
+                  <span>{dish.name}</span>
+                )}
+                <span className="card-cat">{t(`ui.dishCats.${dish.cat}`)}</span>
+              </div>
+              <div className="card-body">
+                <h2 className="card-name">{dish.name}</h2>
+                <div className="card-foot">
+                  <span className="card-price">
+                    {dish.price} {t("ui.mad")}
+                  </span>
                 </div>
               </div>
-            ))}
-          </div>
-        )}
-
-        <div className="menu-list">
-          {withoutPhoto.map((dish) => (
-            <div className="menu-row" key={dish.name}>
-              <div className="menu-row-info">
-                <span className="menu-row-name">{dish.name}</span>
-                <span className="menu-row-cat">
-                  {t(`ui.dishCats.${dish.cat}`)}
-                </span>
-              </div>
-              <span className="menu-row-price">
-                {dish.price} {t("ui.mad")}
-              </span>
             </div>
           ))}
         </div>

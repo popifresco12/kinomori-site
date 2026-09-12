@@ -200,6 +200,23 @@
   transform: scale(1.05);
 }
 
+/* Tarjeta sin foto: placeholder con el nombre del plato */
+.card-media--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(140deg, rgba(255, 122, 61, 0.12), rgba(20, 18, 16, 0.92));
+}
+
+.card-media--empty span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(15px, 1.6vw, 19px);
+  letter-spacing: 0.06em;
+  color: rgba(242, 236, 228, 0.5);
+  text-align: center;
+  padding: 0 16px;
+}
+
 .card-cat {
   position: absolute;
   left: 12px;
