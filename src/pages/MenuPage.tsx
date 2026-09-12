@@ -28,8 +28,8 @@ const MENU: MenuSection[] = [
     id: "dumplings",
     note: "6 pieces · Crispy / Sichuan Spicy / Soup",
     items: [
-      { name: "Beef Filling", price: "65", desc: "Beef, onion, carrot" },
-      { name: "Veggie Filling", price: "60", desc: "Zucchini, carrot, egg, onion, sesame" },
+      { name: "Beef Filling", price: "65", desc: "Beef, onion, carrot", image: "media/dish-dumplings.webp" },
+      { name: "Veggie Filling", price: "60", desc: "Zucchini, carrot, egg, onion, sesame", image: "media/dish-dumplings.webp" },
     ],
   },
   {
@@ -80,6 +80,7 @@ const MENU: MenuSection[] = [
         name: "Mie Goreng",
         price: "65 / 70",
         desc: "Indonesian fried noodle with egg & veggies (chicken)",
+        image: "media/dish-mie-goreng.webp",
       },
       {
         name: "Sichuan Dandan Noodle",
