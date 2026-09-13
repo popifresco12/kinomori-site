@@ -87,12 +87,12 @@ const MENU: MenuSection[] = [
         price: "75",
         desc: "Sichuan chili beef sauce, chives, boiled egg and peanut",
         spicy: true,
+        image: "media/dish-sichuan-dandan-noodle.webp",
       },
       {
         name: "Beijing ZhaJiang Noodle",
         price: "75",
         desc: "Fried soybean beef sauce, fresh veggies and boiled egg",
-        image: "media/dish-beijing-zhajiang.webp",
       },
       {
         name: "Thai Yum Sen Mee Gai",
