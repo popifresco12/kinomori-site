@@ -100,6 +100,7 @@ const MENU: MenuSection[] = [
         price: "75",
         desc: "Cold thin rice noodle tossed with chicken, fresh herbs, veggies, lime and Thai dressing",
         spicy: true,
+        image: "media/dish-thai-yum-sen-mee-gai.webp",
       },
       {
         name: "Vietnamese Pho Ga",
