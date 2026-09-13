@@ -121,7 +121,7 @@ const MENU: MenuSection[] = [
       { name: "Cold Brew Oolong Tea", price: "20" },
       { name: "Homemade VC Lemonnade", price: "25" },
       { name: "Fresh Orange Juice", price: "25" },
-      { name: "Warm Pot Black Tea", price: "25" },
+      { name: "Warm Pot Black Tea", price: "25", image: "media/dish-warm-pot-black-tea.webp" },
       { name: "Bottle of Water", price: "10 / 20", image: "media/dish-bottle-of-water.webp" },
       { name: "Coca Cola", price: "20", image: "media/dish-coca-cola.webp" },
       { name: "Sparkling Water", price: "15", image: "media/dish-sparkling-water.webp" },
