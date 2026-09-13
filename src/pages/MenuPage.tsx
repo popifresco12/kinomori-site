@@ -106,6 +106,7 @@ const MENU: MenuSection[] = [
         name: "Vietnamese Pho Ga",
         price: "75",
         desc: "Traditional chicken broth with wide rice noodle, chicken, herbs and chili · Soup or Dry",
+        image: "media/dish-vietnamese-pho-ga.webp",
       },
       {
         name: "Peanut Sauce Chill Noodle",
