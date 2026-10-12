@@ -37,19 +37,19 @@ const MENU: MenuSection[] = [
     items: [
       {
         name: "Nasi Goreng",
-        price: "65 / 70",
+        price: "65 / 75",
         desc: "Indonesian fried rice with seasonal veggies (chicken) and fried egg on top",
       },
       {
         name: "Korean Bibimbap",
-        price: "70 / 80",
+        price: "75 / 85",
         desc: "Rice with sesame oil, Korean Gochujang sauce, seasonal veggies (chicken) and fried egg on top",
         spicy: true,
         image: "media/dish-korean-bibimbap.webp",
       },
       {
         name: "Thai Green Curry",
-        price: "70 / 80",
+        price: "75 / 85",
         desc: "Eggplant, long beans, carrot, zucchini (chicken), coconut cream and half boiled egg",
         spicy: true,
         image: "media/dish-thai-green-curry.webp",
@@ -68,7 +68,7 @@ const MENU: MenuSection[] = [
       },
       {
         name: "KungPao Chicken",
-        price: "75",
+        price: "65 / 75",
         desc: "Stir-fried chicken with sweet & sour sauce, peanuts, carrot, cucumber and spring onion",
       },
     ],
@@ -78,7 +78,7 @@ const MENU: MenuSection[] = [
     items: [
       {
         name: "Mie Goreng",
-        price: "65 / 70",
+        price: "65 / 75",
         desc: "Indonesian fried noodle with egg & veggies (chicken)",
         image: "media/dish-mie-goreng.webp",
       },
@@ -91,13 +91,13 @@ const MENU: MenuSection[] = [
       },
       {
         name: "Beijing ZhaJiang Noodle",
-        price: "75",
+        price: "65 / 75",
         desc: "Fried soybean beef sauce, fresh veggies and boiled egg",
         image: "media/dish-beijing-zhajiang.webp",
       },
       {
-        name: "Thai Yum Sen Mee Gai",
-        price: "75",
+        name: "Thai Yam Sen Mee",
+        price: "70 / 80",
         desc: "Cold thin rice noodle tossed with chicken, fresh herbs, veggies, lime and Thai dressing",
         spicy: true,
         image: "media/dish-thai-yum-sen-mee-gai.webp",
@@ -109,8 +109,8 @@ const MENU: MenuSection[] = [
         image: "media/dish-vietnamese-pho-ga.webp",
       },
       {
-        name: "Peanut Sauce Chill Noodle",
-        price: "65",
+        name: "Peanut Sauce Chill Soba",
+        price: "60 / 70",
         desc: "Secret peanut sauce, chicken (optional), cucumber, boiled egg and peanuts",
         image: "media/dish-peanut-sauce-chill-noodle.webp",
       },
@@ -120,7 +120,9 @@ const MENU: MenuSection[] = [
     id: "drinks",
     items: [
       { name: "Cold Brew Oolong Tea", price: "20" },
-      { name: "Homemade VC Lemonnade", price: "25" },
+      { name: "Homemade VC Lemonnade", price: "30", desc: "Hydration, electrolyte balance & vitamin C" },
+      { name: "Tropical Iced Tea", price: "30", desc: "Homemade tropical juice with Oolong tea" },
+      { name: "Detox Green Juice", price: "35", desc: "Cucumber, apple, pear, spinach, celery, ginger, lemon" },
       { name: "Fresh Orange Juice", price: "25" },
       { name: "Warm Pot Black Tea", price: "25", image: "media/dish-warm-pot-black-tea.webp" },
       { name: "Bottle of Water", price: "10 / 20", image: "media/dish-bottle-of-water.webp" },
