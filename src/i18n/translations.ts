@@ -17,9 +17,38 @@ export const DEFAULT_LANG: Lang = "en";
 export const LANG_STORAGE_KEY = "kinomori-lang";
 
 type Dict = {
-  nav: { journey: string; menu: string; tea: string; shop: string; workshops: string };
+  nav: { journey: string; menu: string; tea: string; shop: string; workshops: string; reservations: string };
   footer: { tagline: string };
   back: string;
+  reserve: {
+    kicker: string;
+    title: string;
+    intro: string;
+    name: string;
+    email: string;
+    phone: string;
+    people: string;
+    date: string;
+    slot: string;
+    notes: string;
+    submit: string;
+    submitting: string;
+    success: string;
+    successNote: string;
+    noSlots: string;
+    noSlotsDay: string;
+    loadingSlots: string;
+    slotFull: string;
+    peopleLeft: string;
+    tableNotice: string;
+    errorGeneric: string;
+    errorSlot: string;
+    maxPeople: string;
+    optional: string;
+    duration: string;
+    confirmTitle: string;
+    another: string;
+  };
   ui: {
     productNotFoundTitle: string;
     productNotFoundBody: string;
@@ -89,9 +118,38 @@ type Dict = {
 };
 
 const en: Dict = {
-  nav: { journey: "The journey", menu: "Menu", tea: "Tea", shop: "Shop", workshops: "Workshops" },
+  nav: { journey: "The journey", menu: "Menu", tea: "Tea", shop: "Shop", workshops: "Workshops", reservations: "Book a table" },
   footer: { tagline: "Asian kitchen, tea and craft" },
   back: "Back to the journey",
+  reserve: {
+    kicker: "Reservations",
+    title: "Book a table",
+    intro: "We open for dinner from 18:00 to 22:30. Choose a sitting, the day and how many of you are coming.",
+    name: "Name",
+    email: "Email",
+    phone: "Phone (WhatsApp)",
+    people: "How many people",
+    date: "Day",
+    slot: "Sitting",
+    notes: "Anything we should know? (optional)",
+    submit: "Request booking",
+    submitting: "Sending…",
+    success: "Booking requested!",
+    successNote: "We have your request. We'll confirm by WhatsApp or email shortly.",
+    noSlots: "No sittings available for this day.",
+    noSlotsDay: "Fully booked",
+    loadingSlots: "Checking availability…",
+    slotFull: "Full",
+    peopleLeft: "seats left",
+    tableNotice: "We have 9 tables and seat up to 20 people per sitting. For larger groups, write to us.",
+    errorGeneric: "Something went wrong. Please try again or write to us.",
+    errorSlot: "That sitting has just filled up. Please choose another.",
+    maxPeople: "Maximum 20 people per sitting",
+    optional: "optional",
+    duration: "Each sitting lasts 1h30",
+    confirmTitle: "Your booking",
+    another: "Make another booking",
+  },
   ui: {
     productNotFoundTitle: "Product not found",
     productNotFoundBody: "We couldn't find that product.",
@@ -426,9 +484,38 @@ const en: Dict = {
 };
 
 const fr: Dict = {
-  nav: { journey: "Le voyage", menu: "Menu", tea: "Thé", shop: "Boutique", workshops: "Ateliers" },
+  nav: { journey: "Le voyage", menu: "Menu", tea: "Thé", shop: "Boutique", workshops: "Ateliers", reservations: "Réserver" },
   footer: { tagline: "Cuisine asiatique, thé et artisanat" },
   back: "Retour au voyage",
+  reserve: {
+    kicker: "Réservations",
+    title: "Réserver une table",
+    intro: "Nous ouvrons pour le dîner de 18h00 à 22h30. Choisissez un service, le jour et le nombre de convives.",
+    name: "Nom",
+    email: "E-mail",
+    phone: "Téléphone (WhatsApp)",
+    people: "Nombre de personnes",
+    date: "Jour",
+    slot: "Service",
+    notes: "Une précision à nous signaler ? (facultatif)",
+    submit: "Demander la réservation",
+    submitting: "Envoi…",
+    success: "Demande envoyée !",
+    successNote: "Nous avons bien reçu votre demande. Nous confirmons par WhatsApp ou e-mail très vite.",
+    noSlots: "Plus de services disponibles ce jour-là.",
+    noSlotsDay: "Complet",
+    loadingSlots: "Vérification des disponibilités…",
+    slotFull: "Complet",
+    peopleLeft: "places restantes",
+    tableNotice: "Nous avons 9 tables et jusqu'à 20 personnes par service. Pour un plus grand groupe, écrivez-nous.",
+    errorGeneric: "Une erreur est survenue. Réessayez ou écrivez-nous.",
+    errorSlot: "Ce service vient de se remplir. Merci d'en choisir un autre.",
+    maxPeople: "20 personnes maximum par service",
+    optional: "facultatif",
+    duration: "Chaque service dure 1h30",
+    confirmTitle: "Votre réservation",
+    another: "Faire une autre réservation",
+  },
   ui: {
     productNotFoundTitle: "Produit introuvable",
     productNotFoundBody: "Nous n'avons pas trouvé ce produit.",
@@ -763,9 +850,38 @@ const fr: Dict = {
 };
 
 const es: Dict = {
-  nav: { journey: "El viaje", menu: "Menú", tea: "Té", shop: "Tienda", workshops: "Workshops" },
-  footer: { tagline: "Cocina asiática, té y taller" },
+  nav: { journey: "El viaje", menu: "Menú", tea: "Té", shop: "Tienda", workshops: "Workshops", reservations: "Reservar" },
+  footer: { tagline: "Cocina asiática, té y artesanía" },
   back: "Volver al viaje",
+  reserve: {
+    kicker: "Reservas",
+    title: "Reservar mesa",
+    intro: "Abrimos para cenar de 18:00 a 22:30. Elige un turno, el día y cuántos venís.",
+    name: "Nombre",
+    email: "Correo",
+    phone: "Teléfono (WhatsApp)",
+    people: "Cuántas personas",
+    date: "Día",
+    slot: "Turno",
+    notes: "¿Algo que debamos saber? (opcional)",
+    submit: "Solicitar reserva",
+    submitting: "Enviando…",
+    success: "¡Reserva solicitada!",
+    successNote: "Tenemos tu solicitud. Te confirmamos por WhatsApp o correo en breve.",
+    noSlots: "No quedan turnos para ese día.",
+    noSlotsDay: "Completo",
+    loadingSlots: "Consultando disponibilidad…",
+    slotFull: "Completo",
+    peopleLeft: "plazas libres",
+    tableNotice: "Tenemos 9 mesas y hasta 20 personas por turno. Para grupos más grandes, escríbenos.",
+    errorGeneric: "Algo salió mal. Inténtalo de nuevo o escríbenos.",
+    errorSlot: "Ese turno se acaba de llenar. Elige otro, por favor.",
+    maxPeople: "Máximo 20 personas por turno",
+    optional: "opcional",
+    duration: "Cada turno dura 1h30",
+    confirmTitle: "Tu reserva",
+    another: "Hacer otra reserva",
+  },
   ui: {
     productNotFoundTitle: "Producto no encontrado",
     productNotFoundBody: "No hemos encontrado ese producto.",
@@ -1100,9 +1216,38 @@ const es: Dict = {
 };
 
 const zh: Dict = {
-  nav: { journey: "旅程", menu: "菜单", tea: "茶", shop: "商店", workshops: "工作坊" },
-  footer: { tagline: "亚洲料理、茶与手工艺" },
+  nav: { journey: "旅程", menu: "菜单", tea: "茶", shop: "商店", workshops: "工作坊", reservations: "订座" },
+  footer: { tagline: "亚洲料理、茶与手作" },
   back: "返回旅程",
+  reserve: {
+    kicker: "订座",
+    title: "预订餐位",
+    intro: "晚餐时段为 18:00 至 22:30。请选择时段、日期和人数。",
+    name: "姓名",
+    email: "邮箱",
+    phone: "电话（WhatsApp）",
+    people: "人数",
+    date: "日期",
+    slot: "时段",
+    notes: "需要我们注意的事项？（选填）",
+    submit: "提交订座申请",
+    submitting: "发送中…",
+    success: "订座申请已提交！",
+    successNote: "我们已收到您的申请，将尽快通过 WhatsApp 或邮件确认。",
+    noSlots: "该日期已无可用时段。",
+    noSlotsDay: "已订满",
+    loadingSlots: "正在查询空位…",
+    slotFull: "已满",
+    peopleLeft: "个空位",
+    tableNotice: "我们有 9 张餐桌，每时段最多 20 人。人数更多请直接联系我们。",
+    errorGeneric: "出错了，请重试或直接联系我们。",
+    errorSlot: "该时段刚刚订满，请另选一个。",
+    maxPeople: "每时段最多 20 人",
+    optional: "选填",
+    duration: "每个时段时长 1 小时 30 分",
+    confirmTitle: "您的订座",
+    another: "再订一次",
+  },
   ui: {
     productNotFoundTitle: "未找到产品",
     productNotFoundBody: "我们没有找到该产品。",
@@ -1433,9 +1578,38 @@ const zh: Dict = {
 };
 
 const ja: Dict = {
-  nav: { journey: "旅路", menu: "メニュー", tea: "茶", shop: "ショップ", workshops: "ワークショップ" },
-  footer: { tagline: "アジア料理、茶、そして手仕事" },
+  nav: { journey: "旅路", menu: "メニュー", tea: "茶", shop: "ショップ", workshops: "ワークショップ", reservations: "ご予約" },
+  footer: { tagline: "アジア料理・お茶・工芸" },
   back: "旅路に戻る",
+  reserve: {
+    kicker: "ご予約",
+    title: "席を予約する",
+    intro: "ディナーは18:00〜22:30です。時間帯・日付・人数をお選びください。",
+    name: "お名前",
+    email: "メール",
+    phone: "電話（WhatsApp）",
+    people: "人数",
+    date: "日付",
+    slot: "時間帯",
+    notes: "ご要望はありますか？（任意）",
+    submit: "予約を申し込む",
+    submitting: "送信中…",
+    success: "予約を承りました！",
+    successNote: "内容を確認し、WhatsApp かメールでまもなくご連絡します。",
+    noSlots: "この日の空きはありません。",
+    noSlotsDay: "満席",
+    loadingSlots: "空きを確認しています…",
+    slotFull: "満席",
+    peopleLeft: "席あり",
+    tableNotice: "テーブルは9卓、1時間帯あたり最大20名です。それ以上はお問い合わせください。",
+    errorGeneric: "エラーが発生しました。もう一度お試しになるか、お問い合わせください。",
+    errorSlot: "その時間帯はちょうど満席になりました。別の時間帯をお選びください。",
+    maxPeople: "1時間帯あたり最大20名",
+    optional: "任意",
+    duration: "各時間帯は1時間30分",
+    confirmTitle: "ご予約内容",
+    another: "別の予約をする",
+  },
   ui: {
     productNotFoundTitle: "商品が見つかりません",
     productNotFoundBody: "その商品は見つかりませんでした。",

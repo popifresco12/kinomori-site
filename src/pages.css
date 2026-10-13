@@ -562,3 +562,305 @@
   white-space: nowrap;
   color: var(--accent-a);
 }
+
+/* ════════════════════════════════════════════════════════════════
+   RESERVAS — /reservas
+   Paleta del sitio: fondo #14100c, acento #ff7a3d, tinta clara.
+   ════════════════════════════════════════════════════════════════ */
+
+.page-nav-cta {
+  border: 1px solid var(--accent-a, #ff7a3d) !important;
+  border-radius: 999px !important;
+  padding: 6px 14px !important;
+  color: #fff !important;
+  background: rgba(255, 122, 61, 0.16);
+  transition: background 0.18s ease;
+}
+.page-nav-cta:hover {
+  background: rgba(255, 122, 61, 0.32);
+}
+
+.reserve {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 8px 0 40px;
+}
+.reserve-intro {
+  color: rgba(248, 241, 230, 0.78);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin: 0 0 22px;
+  text-align: center;
+}
+.reserve-demo-note {
+  background: rgba(255, 122, 61, 0.1);
+  border: 1px dashed rgba(255, 122, 61, 0.5);
+  color: #ffb185;
+  font-size: 0.82rem;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.reserve-demo-note em {
+  opacity: 0.7;
+  font-style: normal;
+}
+
+.reserve-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.reserve-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.reserve-field--full {
+  grid-column: 1 / -1;
+}
+.reserve-field > span {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(248, 241, 230, 0.6);
+  font-weight: 600;
+}
+.reserve-field > span em {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  opacity: 0.7;
+}
+.reserve-field input[type="text"],
+.reserve-field input[type="date"],
+.reserve-field input[type="email"],
+.reserve-field input[type="tel"],
+.reserve-field textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(248, 241, 230, 0.18);
+  border-radius: 9px;
+  color: #f8f1e6;
+  font: inherit;
+  font-size: 0.98rem;
+  padding: 11px 13px;
+  transition: border-color 0.16s ease;
+}
+.reserve-field input:focus,
+.reserve-field textarea:focus {
+  outline: none;
+  border-color: var(--accent-a, #ff7a3d);
+}
+.reserve-field textarea {
+  resize: vertical;
+}
+.reserve-hint {
+  font-size: 0.74rem;
+  color: rgba(248, 241, 230, 0.45);
+  font-style: normal;
+}
+
+/* Contador de personas */
+.reserve-people {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(248, 241, 230, 0.18);
+  border-radius: 9px;
+  padding: 6px 10px;
+  width: fit-content;
+}
+.reserve-people button {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid rgba(248, 241, 230, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8f1e6;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.reserve-people button:hover {
+  border-color: var(--accent-a, #ff7a3d);
+}
+.reserve-people strong {
+  min-width: 30px;
+  text-align: center;
+  font-size: 1.15rem;
+}
+
+/* Turnos */
+.reserve-slots {
+  grid-column: 1 / -1;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.reserve-slots legend {
+  grid-column: 1 / -1;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(248, 241, 230, 0.6);
+  font-weight: 600;
+  margin-bottom: 4px;
+  padding: 0;
+}
+.reserve-slots legend em {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  opacity: 0.7;
+}
+.reserve-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  border: 1px solid rgba(248, 241, 230, 0.18);
+  border-radius: 10px;
+  padding: 12px 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.16s ease;
+  background: rgba(255, 255, 255, 0.03);
+}
+.reserve-slot:hover {
+  border-color: rgba(255, 122, 61, 0.6);
+}
+.reserve-slot input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.reserve-slot.is-active {
+  border-color: var(--accent-a, #ff7a3d);
+  background: rgba(255, 122, 61, 0.14);
+  box-shadow: 0 0 0 1px var(--accent-a, #ff7a3d) inset;
+}
+.reserve-slot-time {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: #f8f1e6;
+}
+.reserve-slot-left {
+  font-size: 0.72rem;
+  color: rgba(248, 241, 230, 0.5);
+}
+.reserve-noslots {
+  grid-column: 1 / -1;
+  color: #f3a08a;
+  font-size: 0.92rem;
+  text-align: center;
+  padding: 14px 0;
+  margin: 0;
+}
+
+.reserve-table-notice {
+  grid-column: 1 / -1;
+  font-size: 0.8rem;
+  color: rgba(248, 241, 230, 0.5);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.reserve-error {
+  grid-column: 1 / -1;
+  color: #f3a08a;
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.reserve-submit {
+  grid-column: 1 / -1;
+  background: var(--accent-a, #ff7a3d);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: filter 0.16s ease, transform 0.1s ease;
+}
+.reserve-submit:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+.reserve-submit:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.reserve-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Pantalla de confirmación */
+.reserve--done {
+  text-align: center;
+  padding-top: 20px;
+}
+.reserve-success {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: rgba(74, 222, 128, 0.15);
+  border: 2px solid #4ade80;
+  color: #4ade80;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reserve--done h2 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+.reserve-done-note {
+  color: rgba(248, 241, 230, 0.7);
+  margin: 0 0 24px;
+}
+.reserve-recap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 26px;
+  text-align: left;
+}
+.reserve-recap div {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(248, 241, 230, 0.14);
+  border-radius: 9px;
+  padding: 12px 14px;
+}
+.reserve-recap span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(248, 241, 230, 0.5);
+  margin-bottom: 3px;
+}
+.reserve-recap strong {
+  font-size: 1.05rem;
+}
+
+@media (max-width: 560px) {
+  .reserve-form {
+    grid-template-columns: 1fr;
+  }
+  .reserve-slots {
+    grid-template-columns: 1fr;
+  }
+}

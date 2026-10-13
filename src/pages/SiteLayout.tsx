@@ -31,6 +31,9 @@ export function SiteLayout({
           <Link to="/te">{t("nav.tea")}</Link>
           <Link to="/productos">{t("nav.shop")}</Link>
           <Link to="/workshops">{t("nav.workshops")}</Link>
+          <Link to="/reservas" className="page-nav-cta">
+            {t("nav.reservations")}
+          </Link>
         </nav>
         <LanguageSwitcher compact />
       </header>

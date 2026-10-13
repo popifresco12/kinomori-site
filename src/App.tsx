@@ -7,6 +7,7 @@ import { MenuPage } from "./pages/MenuPage";
 import { TePage } from "./pages/TePage";
 import { WorkshopsPage } from "./pages/WorkshopsPage";
 import { WorkshopDetallePage } from "./pages/WorkshopDetallePage";
+import { ReservePage } from "./pages/ReservePage";
 import "./journey.css";
 import "./pages.css";
 
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/productos/:slug" element={<ProductoDetallePage />} />
         <Route path="/workshops" element={<WorkshopsPage />} />
         <Route path="/workshops/:slug" element={<WorkshopDetallePage />} />
+        <Route path="/reservas" element={<ReservePage />} />
         <Route path="*" element={<KinomoriWorld />} />
       </Routes>
     </>
